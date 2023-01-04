@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.form-cover{
+    display: flex;
+}
+.image-div img{
+    width: 100%;
+    height: 400px;
+}
+.image-div{
+    box-shadow: 0px 3px 10px rgb(0,0,0,0.2); 
+}
+.form-div{
+    width: 50%;
+    box-shadow: 0px 3px 10px rgb(0,0,0,0.2);
+}
+.form-control{
+    margin: 45px 30px 0px 15px;
+    position: relative;
+}
+.form-control input[type="email"],
+.form-control input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 1px solid teal;
+    outline: none;
+}
+.form-control input[type="email"],
+.form-control input[type="password"]:focus{
+    border: 2px solid #e3e3e3;
+}
+.form-control i{
+    position: absolute;
+    font-size: 1.2rem;
+    right: 20px;
+    top: 15px;
+    color: teal;
+}
+.form-control button{
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    background-color: teal;
+    color: #fff;
+    transition: 0.5s ease-in;
+}
+.form-control button:hover{
+    background-color: rgb(94, 40, 40);
+}
+.button-control{
+    display: flex;
+    justify-content: space-between;
+}
+.button-control>*:first-child{
+    color: red;
+}
+.button-control>*:nth-child(2){
+    color: rgb(53, 51, 58);
+}
+@media (max-width:768px) {
+    .form-cover{
+        flex-direction: column;
+    }
+    .form-div{
+        width: 100%;
+    }
+}
