@@ -29,6 +29,7 @@ main{
     position: relative;
 }
 .form-control input[type="email"],
+.form-control input[type="text"],
 .form-control input[type="password"]{
     width: 100%;
     padding: 10px;
@@ -37,6 +38,7 @@ main{
     outline: none;
 }
 .form-control input[type="email"],
+.form-control input[type="text"],
 .form-control input[type="password"]:focus{
     border: 2px solid #e3e3e3;
 }
