@@ -18,4 +18,9 @@ export class UserService {
   addUser(user :Partial<{ firstname: string | null; lastname: string | null; email: string | null; password: string | null; }>): Observable<Object>{
     return this.http.post("http://localhost:8080/api/addUser",user);
   }
+
+  logUser(user :Partial<{ email: string | null; password: string | null; }>): Observable<Object>{
+    return this.http.post("http://localhost:8080/api/loginUser",user);
+  }
+  
 }

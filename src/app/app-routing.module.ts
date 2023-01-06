@@ -8,7 +8,7 @@ import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   {
     path: 'home', component: HomeComponent,
-    canActivate: [AuthGuardService], 
+    //canActivate: [AuthGuardService], 
   },
   {
     path: 'login', 

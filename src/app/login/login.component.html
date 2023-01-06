@@ -1,11 +1,12 @@
 <section class="form-cover">
     <div class="form-div">
+    <form (ngSubmit)="onSubmit()">
         <div class="form-control">
-            <input type="email" placeholder="Enter your email">
+            <input type="email" placeholder="Enter your email" [(ngModel)]="user.email" name="email">
             <i class="fa fa-envelope"></i>
         </div>
         <div class="form-control">
-            <input type="password" placeholder="Enter your password">
+            <input type="password" placeholder="Enter your password" [(ngModel)]="user.password" name="password">
             <i class="fa fa-eye"></i>
         </div>
         <div class="form-control">
@@ -18,4 +19,6 @@
         <div class="form-control button-control">
             <a routerLink="/register">Don't have an account? Register here</a>
         </div>
-    </div>
+</form>
+</div>
+</section>
