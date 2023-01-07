@@ -1,0 +1,8 @@
+.exitButton{
+    position:absolute;
+    top:15px;
+    margin-left: 15px;
+    height: 4em;
+    width: 4em;
+    font-weight: 400;
+}
