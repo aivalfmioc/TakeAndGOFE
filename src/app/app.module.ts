@@ -13,7 +13,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MapComponent } from './map/map.component';
-import { GoogleMapsModule } from '@angular/google-maps'
+import { GoogleMapsModule } from '@angular/google-maps';
+import { MenuComponent } from './menu/menu.component';
+import { AccountComponent } from './account/account.component';
+import { ReceiptComponent } from './receipt/receipt.component';
+import { CardsComponent } from './cards/cards.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +25,11 @@ import { GoogleMapsModule } from '@angular/google-maps'
     LoginComponent,
     RegisterComponent,
     FormSkeletComponent,
-    MapComponent
+    MapComponent,
+    MenuComponent,
+    AccountComponent,
+    ReceiptComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,

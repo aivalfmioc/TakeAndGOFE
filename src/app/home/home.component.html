@@ -1,5 +1,9 @@
 <form>
-    <h4>mat-select</h4>
+    <a routerLink="/menu">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </svg>
+    </a>
     <mat-form-field appearance="fill">
       <mat-label>Favorite food</mat-label>
       <mat-select [(ngModel)]="selectedValue" name="food">
@@ -8,17 +12,11 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <p> Selected food: {{selectedValue}} </p>
-    <h4>native html select</h4>
-    <mat-form-field appearance="fill">
-      <mat-label>Favorite car</mat-label>
-      <select matNativeControl [(ngModel)]="selectedCar" name="car">
-        <option value="" selected></option>
-        <option *ngFor="let car of cars" [value]="car.value">
-          {{car.viewValue}}
-        </option>
-      </select>
-    </mat-form-field>
-    <p> Selected car: {{selectedCar}} </p>
+    <p> Selected store: {{selectedValue}} </p>
+    <a routerLink="/map">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-map" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"/>
+    </svg>
+    Don't know the address? Select the location on map</a>
   </form>
   
