@@ -1,6 +1,7 @@
 <section class="form-cover">
-    <div class="form-div">
     <form (ngSubmit)="onSubmit()">
+        <h1 text-allign = "center">Take and Go</h1>
+        <p class="center">Center this text!</p>
         <div class="form-control">
             <input type="email" placeholder="Enter your email" [(ngModel)]="user.email" name="email">
             <i class="fa fa-envelope"></i>
@@ -20,5 +21,4 @@
             <a routerLink="/register">Don't have an account? Register here</a>
         </div>
 </form>
-</div>
 </section>

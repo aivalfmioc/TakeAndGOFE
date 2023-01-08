@@ -6,7 +6,19 @@ import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+
+    template: `
+      <style>
+        button {
+          background-color: white;
+          border: 1px solid #777;
+        }
+      </style>
+      <h3>Controls</h3>
+      <button type="button" (click)="activate()">Activate</button>
+    `
+  
 })
 export class LoginComponent implements OnInit{
   user : User = new User();
