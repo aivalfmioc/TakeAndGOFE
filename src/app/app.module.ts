@@ -17,7 +17,10 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { MenuComponent } from './menu/menu.component';
 import { AccountComponent } from './account/account.component';
 import { ReceiptComponent } from './receipt/receipt.component';
-import { CardsComponent } from './cards/cards.component'
+import { CardsComponent } from './cards/cards.component';
+import { ScanComponent } from './scan/scan.component';
+import { ListComponent } from './list/list.component';
+import { CheckoutComponent } from './checkout/checkout.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,10 @@ import { CardsComponent } from './cards/cards.component'
     MenuComponent,
     AccountComponent,
     ReceiptComponent,
-    CardsComponent
+    CardsComponent,
+    ScanComponent,
+    ListComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

@@ -3,12 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { AccountComponent } from './account/account.component';
 import { AuthGuardService } from './authentication/auth-guard.service';
 import { CardsComponent } from './cards/cards.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 import { HomeComponent } from './home/home.component';
+import { ListComponent } from './list/list.component';
 import { LoginComponent } from './login/login.component';
 import { MapComponent } from './map/map.component';
 import { MenuComponent } from './menu/menu.component';
 import { ReceiptComponent } from './receipt/receipt.component';
 import { RegisterComponent } from './register/register.component';
+import { ScanComponent } from './scan/scan.component';
 
 const routes: Routes = [
   {
@@ -42,6 +45,18 @@ const routes: Routes = [
   {
     path: 'cards',
     component: CardsComponent
+  },
+  {
+    path: 'scan',
+    component: ScanComponent
+  },
+  {
+    path: 'list',
+    component: ListComponent
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent
   },
   {
     path: '**', redirectTo: 'home'
