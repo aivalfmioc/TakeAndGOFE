@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AccountComponent } from './account/account.component';
 import { AuthGuardService } from './authentication/auth-guard.service';
 import { CardsComponent } from './cards/cards.component';
+import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { HomeComponent } from './home/home.component';
-import { ListComponent } from './list/list.component';
 import { LoginComponent } from './login/login.component';
 import { MapComponent } from './map/map.component';
 import { MenuComponent } from './menu/menu.component';
@@ -57,8 +57,8 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
   },
   {
-    path: 'list',
-    component: ListComponent,
+    path: 'cart',
+    component: CartComponent,
     canActivate: [AuthGuardService],
   },
   {

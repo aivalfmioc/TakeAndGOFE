@@ -1,0 +1,9 @@
+
+<h1 mat-dialog-title>{{shop.name}} - {{shop.addressDTO.street}} {{shop.addressDTO.number}}</h1>
+<div mat-dialog-content>
+  Do you want to shop here?
+</div>
+<div mat-dialog-actions class="actions">
+  <button mat-raised-button mat-dialog-close class="leftButton">No</button>
+  <button mat-raised-button color="primary" (click)="shopHere()" cdkFocusInitial class="rightButton">Ok</button>
+</div>

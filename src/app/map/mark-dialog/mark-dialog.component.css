@@ -1,0 +1,12 @@
+.actions{
+    display: block;
+}
+button {
+    margin: 8px;
+}
+.leftButton{
+    float: left;
+}
+.rightButton{
+    float: right;
+}

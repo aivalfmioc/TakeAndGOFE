@@ -19,8 +19,11 @@ import { AccountComponent } from './account/account.component';
 import { ReceiptComponent } from './receipt/receipt.component';
 import { CardsComponent } from './cards/cards.component';
 import { ScanComponent } from './scan/scan.component';
-import { ListComponent } from './list/list.component';
-import { CheckoutComponent } from './checkout/checkout.component'
+import { CheckoutComponent } from './checkout/checkout.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MarkDialogComponent } from './map/mark-dialog/mark-dialog.component';
+import {MatButtonModule} from '@angular/material/button';
+import { CartComponent } from './cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,8 +37,9 @@ import { CheckoutComponent } from './checkout/checkout.component'
     ReceiptComponent,
     CardsComponent,
     ScanComponent,
-    ListComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    MarkDialogComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,9 @@ import { CheckoutComponent } from './checkout/checkout.component'
     MatSelectModule,
     MatInputModule,
     MatFormFieldModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
