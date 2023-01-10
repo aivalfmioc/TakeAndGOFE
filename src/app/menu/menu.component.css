@@ -1,4 +1,40 @@
-.form-control{
-    margin: 45px 30px 0px 15px;
+.form-cover{
+    margin: 0px 0px 0px 0px;
     position: relative;
+}
+.bibi-x-lg{
+    float: right;
+    width: 100%;
+    height: 20px;
+}
+.account{
+    float: center;
+    width: 156px;
+    height: 55px;
+}
+.bibi-person{
+    width: 50px;
+    height: 50px;
+}
+.bibi-receipt{
+    width: 50px;
+    height: 50px;
+}
+.bibi-credit-card{
+    width: 50px;
+    height: 50px;
+}
+.bibi-box-arrow-left{
+    width: 50px;
+    height: 50px;
+}
+a{
+    display: grid;
+    grid-template-columns: auto auto ;
+ text-decoration: none; 
+}
+.form-cover{
+    background-color: rgb(228, 173, 21);
+    height: 100%;
+    text-align: center;
 }
