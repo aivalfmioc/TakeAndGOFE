@@ -22,6 +22,7 @@ import { UserService } from '../services/user.service';
 })
 export class LoginComponent implements OnInit{
   user : User = new User();
+  error_message : String = '';
   constructor(public router: Router, public userService: UserService){}
   set(){
     localStorage.setItem('user','hello');
@@ -35,12 +36,14 @@ export class LoginComponent implements OnInit{
   }
   onSubmit(){
     console.log("log in",this.user);
-   /* this.userService.addUser(this.user).subscribe(data=>{
-      console.log(data)
+    this.userService.logUser(this.user).subscribe(data=>{
+      localStorage.setItem('user',JSON.stringify(data));
+      this.router.navigateByUrl('/');
     },
     error => {
+      this.error_message = error.error;
       console.log(error);
-    }) */
+    })
   }
 
 }

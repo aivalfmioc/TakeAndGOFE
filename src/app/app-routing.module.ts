@@ -16,7 +16,7 @@ import { ScanComponent } from './scan/scan.component';
 const routes: Routes = [
   {
     path: 'home', component: HomeComponent,
-    //canActivate: [AuthGuardService], 
+    canActivate: [AuthGuardService], 
   },
   {
     path: 'login', 
@@ -29,34 +29,42 @@ const routes: Routes = [
   {
     path: 'map', 
     component: MapComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: 'menu',
-    component: MenuComponent
+    component: MenuComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: 'account',
-    component: AccountComponent
+    component: AccountComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: 'receipt',
-    component: ReceiptComponent
+    component: ReceiptComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: 'cards',
-    component: CardsComponent
+    component: CardsComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: 'scan',
-    component: ScanComponent
+    component: ScanComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: 'list',
-    component: ListComponent
+    component: ListComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: 'checkout',
-    component: CheckoutComponent
+    component: CheckoutComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: '**', redirectTo: 'home'
