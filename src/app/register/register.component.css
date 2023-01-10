@@ -44,6 +44,8 @@ form{
 .form-control{
     margin: 25px 0px 0px 0px;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 .form-control input[type="email"],
 .form-control input[type="text"],
@@ -78,7 +80,8 @@ p{
     margin: 0!important;
 }
 .form-control button{
-    width: 100%;
+    width: 10em;
+    font-size: large;
     padding: 10px;
     border: 0;
     outline: 0;
