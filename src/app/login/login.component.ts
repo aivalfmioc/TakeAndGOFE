@@ -37,7 +37,8 @@ export class LoginComponent implements OnInit{
   onSubmit(){
     console.log("log in",this.user);
     this.userService.logUser(this.user).subscribe(data=>{
-      console.log(data)
+      localStorage.setItem('user',JSON.stringify(data));
+      this.router.navigateByUrl('/');
     },
     error => {
       this.error_message = error.error;

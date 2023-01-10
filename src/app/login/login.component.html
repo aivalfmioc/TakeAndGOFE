@@ -1,7 +1,7 @@
 <section class="form-cover">
     <div class="content">
     <div class="title">
-            <h1 class="title_text">Sign up</h1>
+            <h1 class="title_text">Sign in</h1>
     </div>
     <div class="form-div">
         <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
@@ -23,11 +23,11 @@
             {{error_message}}
         </div>
         <div class="form-control">
-            <button type="submit" >Sign up</button>
+            <button type="submit" >Sign in</button>
         </div>
         <div class="form-control button-control">
             <span>Already have an account?</span>
-            <a routerLink="/login"> Log in here!</a>
+            <a routerLink="/register"> Register here!</a>
         </div>
    
 </form>
