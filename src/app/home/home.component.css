@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.text{
+
+    padding-top: 100px;
+    text-align: center;
+    color: rgb(2, 1, 1);
+    line-height: 50px; 
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    text-transform: uppercase; 
+    margin: 0;
+    font-size: -webkit-xxx-large!important;
+    font-family: 'Cormorant SC'!important;
+    font-weight: bold!important;
+    display: center;
+    justify-content: center;
+    align-items: center;   
+}
+.textbox{
+
+    text-align: center;
+    margin: 0;
+    font-size: -webkit-xxx-large!important;
+    font-family: 'Cormorant SC'!important;
+    font-weight: bold!important;
+ 
+    display: center;
+    justify-content: center;
+    align-items: center;      
+}
+a{
+    text-decoration: none; 
+}
