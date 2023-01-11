@@ -24,6 +24,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MarkDialogComponent } from './map/mark-dialog/mark-dialog.component';
 import {MatButtonModule} from '@angular/material/button';
 import { CartComponent } from './cart/cart.component';
+import {MatListModule} from '@angular/material/list';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +55,9 @@ import { CartComponent } from './cart/cart.component';
     MatFormFieldModule,
     GoogleMapsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
