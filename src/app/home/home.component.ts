@@ -1,32 +1,32 @@
-import { Component } from '@angular/core';
-
+import { Component, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
+import { Shop } from '../models/shop';
+import { ShopService } from '../services/shop.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent {
-  selectedValue!: string;
-  selectedCar!: string;
-
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
-  ];
-
-  cars: Car[] = [
-    {value: 'volvo', viewValue: 'Volvo'},
-    {value: 'saab', viewValue: 'Saab'},
-    {value: 'mercedes', viewValue: 'Mercedes'},
-  ];
-}
-interface Food {
-  value: string;
-  viewValue: string;
-}
-
-interface Car {
-  value: string;
-  viewValue: string;
+  shops: Shop[] = [];
+  selected: any;
+  constructor(private shopService: ShopService, private router: Router){
+    this.shopService.getShops().subscribe(data=>{
+      this.shops=data;
+  })
+  }
+  ngOnInit() {
+    
+  }
+  findShop(id: number){
+    return this.shops.find(shop => shop.id == id);
+  }
+  shopSelected(select: any){
+    let shop= this.findShop(select.target.value);
+    if(localStorage.getItem('shop'))
+      localStorage.removeItem('shop')
+    localStorage.setItem('shop',JSON.stringify(shop));
+    this.router.navigateByUrl('/cart');
+  }
 }

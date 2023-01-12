@@ -15,6 +15,8 @@ export class MarkDialogComponent {
     this.shop=data;
   }
   shopHere(){
+    if(localStorage.getItem('shop'))
+      localStorage.removeItem('shop')
     localStorage.setItem('shop',JSON.stringify(this.shop));
     this.dialogRef.close();
     this.router.navigateByUrl('/cart');

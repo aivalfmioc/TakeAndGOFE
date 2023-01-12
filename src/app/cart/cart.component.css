@@ -8,8 +8,15 @@
     margin: 10px;
     padding-top: 3em;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: 400;
+    font-weight: 400;
+}
+.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text{
+    text-align: right;
+}
+.mdc-list-item__secondary-text{
+    text-align: right;
 }
 .controls{
     position: fixed;
@@ -52,7 +59,24 @@ button {
     float: right;
 }
 a{
-    display: grid;
-    grid-template-columns: auto auto ;
+
  text-decoration: none; 
+}
+.buttons{
+    background-color: white;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+}
+.trash{
+    background-color: white;
+    border: none;
+    margin-right: 0;
+    padding-right: 0;
+    width: fit-content;
+}
+input{
+    position: relative;
+    top:-3px;
 }
