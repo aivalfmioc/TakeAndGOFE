@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MapComponent } from './map/map.component';
 import { MenuComponent } from './menu/menu.component';
+import { PaymentComponent } from './payment/payment.component';
 import { ReceiptComponent } from './receipt/receipt.component';
 import { RegisterComponent } from './register/register.component';
 import { ScanComponent } from './scan/scan.component';
@@ -64,6 +65,11 @@ const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path:'payment',
+    component: PaymentComponent,
     canActivate: [AuthGuardService],
   },
   {

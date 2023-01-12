@@ -1,21 +1,12 @@
-<p>My account</p>
 <a routerLink="/menu">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg exitButton" viewBox="0 0 16 16">
         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
     </svg>
 </a>
-    <div class="form-control">
-        <input type="text" placeholder="First name" [(ngModel)]="user.firstname" name="firstname">
-        <i class="fa fa-envelope"></i>
-    </div>
-    <div class="form-control">
-        <input type="text" placeholder="Last name" [(ngModel)]="user.lastname" name="lastname">
-        <i class="fa fa-envelope"></i>
-    </div>
-    <div class="form-control">
-        <input type="email" placeholder="Enter your email" [(ngModel)]="user.email" name="email">
-        <i class="fa fa-envelope"></i>
-    </div>
-    <button type="button">Change password</button>
-    <br>
-    <button type="button">Save changes</button>
+        <input class="details" type="text" placeholder="First name" [(ngModel)]="user.firstname" name="firstname">
+        <input class="details2" type="text" placeholder="Last name" [(ngModel)]="user.lastname" name="lastname">
+        <input class="details3" type="email" placeholder="Enter your email" [(ngModel)]="user.email" name="email">
+
+<button type="button">Change password</button>
+<br>
+<button type="button">Save changes</button>

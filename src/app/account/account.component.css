@@ -1,0 +1,30 @@
+.details{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    margin-top: 230px;
+}
+.details2{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+
+    margin-top: 230px;
+}
+.details3{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}

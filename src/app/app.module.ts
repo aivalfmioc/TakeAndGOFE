@@ -27,6 +27,7 @@ import { CartComponent } from './cart/cart.component';
 import {MatListModule} from '@angular/material/list';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { PaymentComponent } from './payment/payment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     ScanComponent,
     CheckoutComponent,
     MarkDialogComponent,
-    CartComponent
+    CartComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
