@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../models/user';
@@ -9,7 +10,9 @@ import { UserService } from '../services/user.service';
 })
 export class AccountComponent {
   user : User = new User();
-  constructor(public router: Router, public userService: UserService){}
+  constructor(public router: Router, public userService: UserService){
+    this.user=JSON.parse(localStorage.getItem('user')!);
+  }
   set(){
     localStorage.setItem('user','hello');
     this.router.navigateByUrl('/');
