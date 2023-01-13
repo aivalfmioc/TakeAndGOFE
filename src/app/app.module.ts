@@ -28,6 +28,8 @@ import {MatListModule} from '@angular/material/list';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { PaymentComponent } from './payment/payment.component';
+import { BarcodeScannerLivestreamModule } from "ngx-barcode-scanner";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +63,8 @@ import { PaymentComponent } from './payment/payment.component';
     MatButtonModule,
     MatListModule,
     ScrollingModule,
-    NgMultiSelectDropDownModule.forRoot()
+    NgMultiSelectDropDownModule.forRoot(),
+    BarcodeScannerLivestreamModule
   ],
   providers: [],
   bootstrap: [AppComponent]

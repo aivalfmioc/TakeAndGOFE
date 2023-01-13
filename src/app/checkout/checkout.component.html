@@ -1,38 +1,23 @@
-<a routerLink="/list">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-      </svg>
+<div class="backButton">
+    <a routerLink="/cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
     </a>
-
-    <div class="content">
-      <div class="title" text-allign="center">Check out</div>
-      <div class="shopList">
-          <mat-list>
-              <mat-divider></mat-divider>
-              <mat-list-item >
-                <mat-icon matListItemIcon><span style="color:black">Item1</span></mat-icon>
-                <div matListItemTitle>
-                
-                </div>
-              </mat-list-item>
-                  
-              <mat-divider></mat-divider>
-              <div mat-subheader>
-                  <span id="totalTitle">Total</span>
-                  <span id="totalNumber">$19</span>
-              </div>
-          </mat-list>
+  </div>
+  <div>
+      <div class="text">Checkout</div>
+      <div class="textbox">
+       <div class="select">
+         <select (change)="shopSelected($event)">
+          <option disabled default> Select market</option>
+            <option class="option" *ngFor="let shop of shops" [value]="shop.user_id">
+              MASTERCARD***1234
+            </option>
+          </select>
+    </div>
       </div>
-
-      <div class="controls">
-          <div class="actions">
-         
-              <div class="actionPay" >
-                 
-                  <button mat-raised-button color="primary" routerLink="/payment">Finish payment</button>
-              
-                  
-              </div>
-          </div>
-      </div>
-</div>
+      <div class="actionFinalize" >
+        <button mat-raised-button color="primary" (click)="pay()">Pay</button>
+    </div>
+  </div>
