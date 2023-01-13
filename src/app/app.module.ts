@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
@@ -29,7 +29,12 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { PaymentComponent } from './payment/payment.component';
 import { BarcodeScannerLivestreamModule } from "ngx-barcode-scanner";
-
+import { AnimationComponent } from './animation/animation.component';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
+export function playerFactory(): any {  
+  return import('lottie-web');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +51,8 @@ import { BarcodeScannerLivestreamModule } from "ngx-barcode-scanner";
     CheckoutComponent,
     MarkDialogComponent,
     CartComponent,
-    PaymentComponent
+    PaymentComponent,
+    AnimationComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +70,8 @@ import { BarcodeScannerLivestreamModule } from "ngx-barcode-scanner";
     MatListModule,
     ScrollingModule,
     NgMultiSelectDropDownModule.forRoot(),
-    BarcodeScannerLivestreamModule
+    BarcodeScannerLivestreamModule,
+    LottieModule.forRoot({ player: playerFactory }),
   ],
   providers: [],
   bootstrap: [AppComponent]

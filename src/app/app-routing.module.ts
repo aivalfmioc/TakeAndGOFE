@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountComponent } from './account/account.component';
+import { AnimationComponent } from './animation/animation.component';
 import { AuthGuardService } from './authentication/auth-guard.service';
 import { CardsComponent } from './cards/cards.component';
 import { CartComponent } from './cart/cart.component';
@@ -13,6 +14,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { ReceiptComponent } from './receipt/receipt.component';
 import { RegisterComponent } from './register/register.component';
 import { ScanComponent } from './scan/scan.component';
+
 
 const routes: Routes = [
   {
@@ -40,7 +42,7 @@ const routes: Routes = [
   {
     path: 'account',
     component: AccountComponent,
-    canActivate: [AuthGuardService],
+     canActivate: [AuthGuardService],
   },
   {
     path: 'receipt',
@@ -60,7 +62,7 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartComponent,
-    canActivate: [AuthGuardService],
+     canActivate: [AuthGuardService],
   },
   {
     path: 'checkout',
@@ -71,6 +73,10 @@ const routes: Routes = [
     path:'payment',
     component: PaymentComponent,
     canActivate: [AuthGuardService],
+  },
+  {
+    path:'animation',
+    component: AnimationComponent
   },
   {
     path: '**', redirectTo: 'home'
