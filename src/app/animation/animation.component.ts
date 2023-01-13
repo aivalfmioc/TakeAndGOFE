@@ -10,7 +10,7 @@ import { AnimationOptions } from 'ngx-lottie';
 })
 export class AnimationComponent implements OnInit {
   options: AnimationOptions = {    
-    path: '/assets/lottie/piggy-bank.json'  
+    path: '/assets/lottie/map.json'  
   };  
 
   constructor(private router: Router) { }  
