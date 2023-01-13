@@ -22,18 +22,19 @@ export class CheckoutComponent {
   ngOnInit() {
     
   }
-  // findShop(id: number){
-  //   return this.shops.find(shop => shop.id == id);
-  // }
   shopSelected(select: any){
     this.selected = select.target.value;
-    // let shop= this.findShop(select.target.value);
-    // if(localStorage.getItem('shop'))
-    //   localStorage.removeItem('shop')
-    // localStorage.setItem('shop',JSON.stringify(shop));
-    // this.router.navigateByUrl('/cart');
+  }
+  validatePayment(){
+
   }
   pay(){
-    console.log(this.selected);
+    if(this.selected!='default'){
+      this.validatePayment();
+      this.shopService.addOrder().subscribe(data=>{
+        console.log(data);
+      })
+    }
+    
   }
 }

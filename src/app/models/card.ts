@@ -1,4 +1,6 @@
 export class Card {
-    user_id!: number;
+    id!: number;
     code!: String;
+    month!: number;
+    year!: number;
 }

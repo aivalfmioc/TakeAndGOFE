@@ -10,9 +10,9 @@
       <div class="textbox">
        <div class="select">
          <select (change)="shopSelected($event)">
-          <option disabled default> Select market</option>
-            <option class="option" *ngFor="let shop of shops" [value]="shop.user_id">
-              MASTERCARD***1234
+          <option  value="default"> Select market</option>
+            <option class="option" *ngFor="let shop of shops" [value]="shop.id">
+              MASTERCARD***{{shop.code}}
             </option>
           </select>
     </div>
