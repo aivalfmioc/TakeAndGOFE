@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit{
     console.log("log in",this.user);
     this.userService.logUser(this.user).subscribe(data=>{
       localStorage.setItem('user',JSON.stringify(data));
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/animationcart');
     },
     error => {
       this.error_message = error.error;

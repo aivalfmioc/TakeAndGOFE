@@ -33,6 +33,7 @@ import { AnimationComponent } from './animation/animation.component';
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
 import { NewcardComponent } from './newcard/newcard.component';
+import { AnimationcartComponent } from './animationcart/animationcart.component';
 export function playerFactory(): any {  
   return import('lottie-web');
 }
@@ -54,7 +55,8 @@ export function playerFactory(): any {
     CartComponent,
     PaymentComponent,
     AnimationComponent,
-    NewcardComponent
+    NewcardComponent,
+    AnimationcartComponent
   ],
   imports: [
     BrowserModule,
