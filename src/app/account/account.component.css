@@ -1,3 +1,14 @@
+.accountMenu{
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.exitButtonAccount{
+    width: 2em;
+    height: 2em;
+    margin: 1.5em;
+}
 .details{
     text-align: center;
     display: flex;
@@ -32,7 +43,7 @@
     text-align: center;
     color: rgb(255, 255, 255);
     font-size: 30px;
-    margin-top: 30%;
+    margin-top: 20%;
     margin-bottom: 80px;
     text-transform: uppercase;
     font-family: 'Cormorant SC'!important;
@@ -54,7 +65,6 @@
     color: #fff;
     transition: 0.5s ease-in;
     text-align: center;
-
     padding-left: 5em;
 }
 .buttonaccount{

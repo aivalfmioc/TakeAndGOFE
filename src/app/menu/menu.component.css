@@ -1,10 +1,20 @@
+.exitButtonMenu{
+    width: 2em;
+    height: 2em;
+    margin: 1.5em;
+}
 .form-cover{
-    margin: 0px 0px 0px 0px;
-    position: relative;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 .bibi-x-lg{
     width: 100%;
     height: 20px;
+    
 }
 .account{
     float: center;
@@ -28,26 +38,18 @@
     height: 50px;
 }
 a{
-    display: grid;
-    grid-template-columns: auto auto ;
+    /* display: grid;
+    grid-template-columns: auto auto ; */
     text-decoration: none; 
 }
-.form-cover{
-    height: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-.textt{
+.textmenu{
     color: purple;
     font-size: 1.5rem;
     padding-top: 20px;
     padding-left: 3em;
 }
-.homelink{
+/* .homelink{
     position: absolute;
     z-index: 10;
     padding: 2em;
-}
+} */

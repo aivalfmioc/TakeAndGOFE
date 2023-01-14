@@ -1,0 +1,16 @@
+.exitButtonCards{
+    width: 2em;
+    height: 2em;
+    margin: 1.5em;
+}
+.ButtonAndTitle{
+  display: flex;
+  align-items: center;
+}
+.titleNewcard{
+    margin: 0;
+}
+.buttonAddCard{
+    margin-left: auto;
+    text-decoration: none;
+}

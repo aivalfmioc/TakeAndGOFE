@@ -1,6 +1,8 @@
-.backButton{
+.backButtonCart{
     position: absolute;
-    margin: 1em;
+    width: 2em;
+    height: 2em;
+    margin: 1.5em;
 }
 .title{
     width: 100%;
