@@ -50,6 +50,7 @@ export class MapComponent implements OnInit{
     })
   }
   ngOnInit() {
+     
       if(localStorage.getItem('shop'))
         localStorage.removeItem('shop');
       this.center = {

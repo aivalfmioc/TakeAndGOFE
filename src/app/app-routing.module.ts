@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MapComponent } from './map/map.component';
 import { MenuComponent } from './menu/menu.component';
+import { NewcardComponent } from './newcard/newcard.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ReceiptComponent } from './receipt/receipt.component';
 import { RegisterComponent } from './register/register.component';
@@ -76,7 +77,13 @@ const routes: Routes = [
   },
   {
     path:'animation',
-    component: AnimationComponent
+    component: AnimationComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path:'newcard',
+    component: NewcardComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: '**', redirectTo: 'home'

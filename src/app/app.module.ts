@@ -32,6 +32,7 @@ import { BarcodeScannerLivestreamModule } from "ngx-barcode-scanner";
 import { AnimationComponent } from './animation/animation.component';
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
+import { NewcardComponent } from './newcard/newcard.component';
 export function playerFactory(): any {  
   return import('lottie-web');
 }
@@ -52,7 +53,8 @@ export function playerFactory(): any {
     MarkDialogComponent,
     CartComponent,
     PaymentComponent,
-    AnimationComponent
+    AnimationComponent,
+    NewcardComponent
   ],
   imports: [
     BrowserModule,
