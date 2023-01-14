@@ -1,39 +1,57 @@
-<section class="form-cover">
-    <div class="content">
-    <div class="title">
-            <h1 class="title_text">Sign in</h1>
-    </div>
-    <div class="form-div">
-        <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
-        <div class="form-control">
-            <input type="email" required #email="ngModel" placeholder="Enter your email" [(ngModel)]="user.email" name="email">
-            <i class="fa fa-user icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
-              </svg></i>
-        </div>
-        <div class="form-control">
-            <input matInput required #password="ngModel" type="password" 
-            placeholder="Enter your password" [(ngModel)]="user.password" name="password">
-            <i class="fa fa-user icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key" viewBox="0 0 16 16">
-                <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"/>
-                <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-              </svg></i>
-        </div>
-        <div class="alert" *ngIf='error_message!=""'>
-            {{error_message}}
-        </div>
-        <div class="form-control">
-            <div class="button_wrapper">
-            <button type="submit" >Sign in</button>
-            </div>
-        </div>
-        <div class="form-control button-control">
-            <span>Don't have an account?</span>
-            <a routerLink="/register"> Register here!</a>
-        </div>
-   
-</form>
-</div>
-</div>
-
-</section>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet"  >
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body class="bodyLogIn">
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+			<div class="signup">
+				<form #registerForm="ngForm" (ngSubmit)="onSubmitRegister()">
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="txt" required #fname="ngModel" placeholder="First name" [(ngModel)]="user.firstname" name="firstname">
+                    <input type="text" name="txt" required #lname="ngModel" placeholder="Last name" [(ngModel)]="user.lastname" name="lastname">
+                    <input type="email" name="email" required #email="ngModel" placeholder="Enter your email" [(ngModel)]="user.email" name="email">
+					<input type="password" name="pswd"  required #password="ngModel" type="password" 
+                    placeholder="Enter your password" [(ngModel)]="user.password" name="password">
+					<input type="password" name="pswd" #Cpassword="ngModel" type="password" placeholder="Confirm your password" [(ngModel)]="user.checkPassword" name="Cpassword">
+					<button type="submit">Sign up</button>
+                    <div class="alert" *ngIf="fname.touched && fname.errors?.['required']">
+                        This field can not be empty
+                    </div>
+                    <div class="alert" *ngIf="lname.touched && lname.errors?.['required']">
+                        This field can not be empty
+                    </div>
+                    <div class="alert" *ngIf="email.touched && email.errors?.['required']">
+                        This field can not be empty
+                    </div>
+                    <div class="alert" *ngIf="email.touched && !email.errors?.['required'] && invalidEmail()" >
+                        Invalid email format
+                    </div>
+                    <div class="alert" *ngIf="password.touched && password.errors?.['required']">
+                        This field can not be empty
+                    </div>
+                    <div class="alert" *ngIf="password.touched && passwordhasError()">
+                        <p>Your password must have min 8 characters</p>
+                        <p>One lower case, upper case and numeric chars.</p>
+                    </div>
+                    <div class="alert" *ngIf= ></div>
+				</form>
+			</div>
+           
+			<div class="login">
+				<form  #registerForm="ngForm" (ngSubmit)="onSubmit()">
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" required #email="ngModel" placeholder="Enter your email" [(ngModel)]="user.email" name="email">
+					<input type="password" required #password="ngModel"  placeholder="Enter your password" [(ngModel)]="user.password" name="password">
+					
+                <div class="alert" text-align="center" *ngIf='error_message!=""'>
+                    {{error_message}}
+                </div>
+                <button type="submit" >Sign in</button>
+				</form>
+			</div>
+	</div>
+</body>
+</html>
