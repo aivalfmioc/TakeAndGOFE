@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountComponent } from './account/account.component';
-import { AnimationComponent } from './animation/animation.component';
-import { AnimationcartComponent } from './animationcart/animationcart.component';
+import { AnimationComponent } from './animations/animation/animation.component';
+import { AnimationcartComponent } from './animations/animationcart/animationcart.component';
 import { AuthGuardService } from './authentication/auth-guard.service';
 import { CardsComponent } from './cards/cards.component';
 import { CartComponent } from './cart/cart.component';

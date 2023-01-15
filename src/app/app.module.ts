@@ -29,11 +29,12 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { PaymentComponent } from './payment/payment.component';
 import { BarcodeScannerLivestreamModule } from "ngx-barcode-scanner";
-import { AnimationComponent } from './animation/animation.component';
+import { AnimationComponent } from './animations/animation/animation.component';
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
 import { NewcardComponent } from './newcard/newcard.component';
-import { AnimationcartComponent } from './animationcart/animationcart.component';
+import { AnimationcartComponent } from './animations/animationcart/animationcart.component';
+import { SuccessComponent } from './animations/success/success.component';
 export function playerFactory(): any {  
   return import('lottie-web');
 }
@@ -56,7 +57,8 @@ export function playerFactory(): any {
     PaymentComponent,
     AnimationComponent,
     NewcardComponent,
-    AnimationcartComponent
+    AnimationcartComponent,
+    SuccessComponent,
   ],
   imports: [
     BrowserModule,

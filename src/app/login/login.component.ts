@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit{
   user : User = new User();
   error_message : String = "";
   valid: Boolean = false;
+  login: Boolean = false;
   constructor(public router: Router, public userService: UserService){}
   set(){
     localStorage.setItem('user','hello');
@@ -52,7 +53,7 @@ export class LoginComponent implements OnInit{
     console.log("log in",this.user);
     this.userService.logUser(this.user).subscribe(data=>{
       localStorage.setItem('user',JSON.stringify(data));
-      this.router.navigateByUrl('/animationcart');
+      this.login = true;
     },
     error => {
       this.error_message = error.error;
