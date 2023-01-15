@@ -1,3 +1,28 @@
 .lottie-animationmt-10{
-    padding-top: 4em;
+    padding-top: 2em;
 }
+.wrapper {
+    display: grid;
+    place-items: center;
+  }
+.typing-demo {
+    width: 20ch; /*dimension of the text written*/
+    animation: typing 2s steps(30), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid;
+    font-family: monospace;
+    font-size: 1em;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
