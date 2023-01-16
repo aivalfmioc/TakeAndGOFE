@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { BarcodeScannerLivestreamComponent } from 'ngx-barcode-scanner';
+import { IntObject } from '../models/int-object';
 import { Item } from '../models/item';
 import { Shop } from '../models/shop';
 import { User } from '../models/user';

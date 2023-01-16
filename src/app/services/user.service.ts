@@ -22,5 +22,10 @@ export class UserService {
   logUser(user :Partial<{ email: string | null; password: string | null; }>): Observable<Object>{
     return this.http.post("http://localhost:8080/api/loginUser",user);
   }
-  
+  updateUser(user :Partial<{id:number|null; firstname: string | null; lastname: string | null; email: string | null;}>): Observable<Object>{
+    return this.http.put("http://localhost:8080/api/updateUserr",user);
+  }
+  changePassword(user :Partial<{ id:number|null; oldPassword: string | null; newPassword: string | null;}>): Observable<Object>{
+    return this.http.put("http://localhost:8080/api/changePassword",user);
+  }
 }

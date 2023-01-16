@@ -5,4 +5,8 @@ export class User {
     email!: string;
     password!: string;
     checkPassword!: string;
+    oldPassword!: string;
+    newPassword!: string;
+    checknewPassword!: string;
+    cart_id!: number;
 }

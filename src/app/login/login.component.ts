@@ -50,7 +50,6 @@ export class LoginComponent implements OnInit{
     return !this.valid;
   }
   onSubmit(){
-    console.log("log in",this.user);
     this.userService.logUser(this.user).subscribe(data=>{
       localStorage.setItem('user',JSON.stringify(data));
       this.login = true;
