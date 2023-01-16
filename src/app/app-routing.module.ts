@@ -16,6 +16,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { ReceiptComponent } from './receipt/receipt.component';
 import { RegisterComponent } from './register/register.component';
 import { ScanComponent } from './scan/scan.component';
+import { TestComponent } from './test/test.component';
 
 
 const routes: Routes = [
@@ -89,6 +90,11 @@ const routes: Routes = [
   {
     path:'animationcart',
     component: AnimationcartComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'test',
+    component: TestComponent,
     canActivate: [AuthGuardService]
   },
   {

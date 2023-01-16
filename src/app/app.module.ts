@@ -35,6 +35,7 @@ import player from 'lottie-web';
 import { NewcardComponent } from './newcard/newcard.component';
 import { AnimationcartComponent } from './animations/animationcart/animationcart.component';
 import { SuccessComponent } from './animations/success/success.component';
+import { TestComponent } from './test/test.component';
 export function playerFactory(): any {  
   return import('lottie-web');
 }
@@ -59,6 +60,7 @@ export function playerFactory(): any {
     NewcardComponent,
     AnimationcartComponent,
     SuccessComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
