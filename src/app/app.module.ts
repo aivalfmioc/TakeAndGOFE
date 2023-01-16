@@ -36,6 +36,8 @@ import { NewcardComponent } from './newcard/newcard.component';
 import { AnimationcartComponent } from './animations/animationcart/animationcart.component';
 import { SuccessComponent } from './animations/success/success.component';
 import { TestComponent } from './test/test.component';
+import { CreditCardDirectivesModule } from 'angular-cc-library';
+import { Test1Component } from './test1/test1.component';
 export function playerFactory(): any {  
   return import('lottie-web');
 }
@@ -61,6 +63,7 @@ export function playerFactory(): any {
     AnimationcartComponent,
     SuccessComponent,
     TestComponent,
+    Test1Component
   ],
   imports: [
     BrowserModule,
@@ -80,6 +83,7 @@ export function playerFactory(): any {
     NgMultiSelectDropDownModule.forRoot(),
     BarcodeScannerLivestreamModule,
     LottieModule.forRoot({ player: playerFactory }),
+    CreditCardDirectivesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

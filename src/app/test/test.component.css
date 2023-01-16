@@ -39,6 +39,10 @@ body {
     width: 100%;
     height: 100%;
   }
+  .content:focus-within .bg {
+    visibility: visible;
+    opacity: .6;
+  }
   nav {
     background-color: #1E1E23;
     height: 60px;
