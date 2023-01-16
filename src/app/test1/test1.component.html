@@ -2,14 +2,14 @@
     <header tabindex="0">Header</header>
     <div id="nav-container">
       <div class="bg"></div>
-      <div class="button" tabindex="0">
+      <div class="button" tabindex="0" (click)="buttonClicked()">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </div>
       <div id="nav-content" tabindex="0">
         <ul>
-          <li (click)="changeContent(1)">Home</li>
+          <li (click)="changeContent(1)"><a>Home</a></li>
           <li (click)="changeContent(2)">Services</li>
           <li>Blog</li>
           <li>About</li>

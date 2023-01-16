@@ -9,5 +9,9 @@ export class Test1Component {
   page: number = 1;
   changeContent(page: number){
     this.page = page;
+    document.getElementById('nav-content')!.style.transform = "translateX(-100%)";
+  }
+  buttonClicked(){
+    document.getElementById('nav-content')!.style.transform = "none";
   }
 }

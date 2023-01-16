@@ -1,6 +1,6 @@
 export class Card {
     id!: number;
-    code!: String;
+    code!: number;
     month!: number;
     year!: number;
 }

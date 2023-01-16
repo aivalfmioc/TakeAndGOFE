@@ -154,6 +154,7 @@ main small {
   display: block;
   text-transform: uppercase;
   transition: color .1s;
+  touch-action: manipulation;
 }
 
 #nav-content li a:hover {
@@ -186,6 +187,10 @@ main small {
 #nav-container:focus-within #nav-content {
   transform: none;
 }
+
+#nav-content:focus-within{
+    transform: translateX(-100%);
+  }
 
 
 
