@@ -1,33 +1,53 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Shop } from '../models/shop';
-import { ShopService } from '../services/shop.service';
+import { Card } from '../models/card';
+import { CreditCardValidators } from 'angular-cc-library';
+import { CardService } from '../services/card.service';
+
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
 export class TestComponent {
+  success:Boolean = false;
+  errorBE: string = "";
+  title: String = "New Card"
+  form!: FormGroup;
+  submitted: boolean = false;
+  formBuilder : FormBuilder = new FormBuilder();
+  constructor(private cardService: CardService) {}
+  card: Card = new Card();
+  ngOnInit() {
 
-  shops: Shop[] = [];
-  selected: any;
-  constructor(private shopService: ShopService, private router: Router){
-    this.shopService.getShops().subscribe(data=>{
-      this.shops=data;
-  })
+    this.form = this.formBuilder.group({
+      creditCard: ['', [CreditCardValidators.validateCCNumber]],
+      expirationDate: ['', [CreditCardValidators.validateExpDate]],
+      cvc: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(4)]] 
+    });
   }
-  findShop(id: number){
-    return this.shops.find(shop => shop.id == id);
-  }
-  shopSelected(select: any){
-    let shop= this.findShop(select.target.value);
-    if(localStorage.getItem('shop'))
-      localStorage.removeItem('shop')
-    localStorage.setItem('shop',JSON.stringify(shop));
-    this.router.navigateByUrl('/cart');
-  }
-  logOut(){
-    localStorage.removeItem('user');
-    this.router.navigateByUrl('/login');
+
+  onSubmit(form: any) {
+    this.submitted = true;
+    this.errorBE = "";
+    if(form.form.status==="VALID"){
+      var splitted = form.form.value.expirationDate.split(" / ", 2); 
+      this.card.code=form.form.value.creditCard;
+      this.card.month = Number(splitted[0]);
+      this.card.year = Number(splitted[1]);
+      this.card.CVV = Number(form.form.value.cvv);
+      console.log(this.card);
+      this.cardService.addCard(this.card).subscribe(
+        data=> {
+          this.success=true;
+        },
+        error=>{
+          this.errorBE = error.error;
+        }
+      )
+    }
+
+      console.log(form.form.value);
   }
   }

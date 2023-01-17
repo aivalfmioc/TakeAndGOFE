@@ -5,7 +5,7 @@
 </a>
 </div>
 
-<form #demoForm="ngForm"[formGroup]="form" (ngSubmit)="onSubmit(demoForm)" >
+<form #demoForm="ngForm" [formGroup]="form" (ngSubmit)="onSubmit(demoForm)" >
     <input id="cc-number" formControlName="creditCard" type="tel" autocomplete="cc-number" ccNumber>
     <div *ngIf="form.controls['creditCard'].touched && form.controls['creditCard'].invalid">
         not a valid creditcard number

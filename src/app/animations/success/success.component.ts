@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnimationItem } from 'lottie-web';
 import { AnimationOptions } from 'ngx-lottie';
@@ -14,9 +14,9 @@ export class SuccessComponent {
   };  
 
   constructor(private router: Router) { }  
-
+  @Input() url = "";
   ngOnInit(): void { 
-    setTimeout(() => {this.router.navigateByUrl('/home');
+    setTimeout(() => {this.router.navigateByUrl(this.url);
   }, 2500)
    }
 

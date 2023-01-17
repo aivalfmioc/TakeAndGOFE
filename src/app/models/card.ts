@@ -1,6 +1,7 @@
 export class Card {
     id!: number;
-    code!: number;
+    CVV!:number;
+    code!: string;
     month!: number;
     year!: number;
 }
