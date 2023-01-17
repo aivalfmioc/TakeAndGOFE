@@ -18,15 +18,31 @@ export class CartComponent {
   constructor(private itemService: ItemService){
     this.shop = JSON.parse(localStorage.getItem('shop')!);
     this.user=JSON.parse(localStorage.getItem('user')!);
-    itemService.getItems().subscribe(data=>{
+    this.updateCart();
+  }
+  updateCart(){
+    this.itemService.getItems().subscribe(data=>{
       this.items=data;
       if(this.items.length>0)
-        itemService.getTotal().subscribe(data=>{
+        this.itemService.getTotal().subscribe(data=>{
           console.log(data);
           this.total = data.total;
         })
     })
-    
+  }
+  increase(id: number){
+    this.itemService.increaseItem(id).subscribe(
+      data=>{
+        this.updateCart();
+      },
+    )
+  }
+  decrease(id: number){
+    this.itemService.decreaseItem(id).subscribe(
+      data=>{
+        this.updateCart();
+      },
+    )
   }
   deleteItem(id: number){
     this.itemService.deleteItem(id).subscribe(
@@ -45,5 +61,8 @@ export class CartComponent {
         })
       }
     )
+  }
+  dragItem(){
+    console.log("item dragged")
   }
 }

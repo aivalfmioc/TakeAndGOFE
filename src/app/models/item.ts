@@ -5,4 +5,7 @@ export class Item {
     userID!: number;
     shopID!: number;
     barcode!: string;
+    quantity!: number;
+    price_per_entity!: Float32Array;
+    max_quantity!:number;
 }
