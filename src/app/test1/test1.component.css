@@ -19,6 +19,7 @@ strong {
 }
 
 header {
+  background: #ececec;
   display: flex;
   position: fixed;
   width: 100%;
@@ -150,7 +151,7 @@ main small {
 }
 
 #nav-content li a {
-  padding: 10px 5px;
+  padding: 15px 5px;
   display: block;
   text-transform: uppercase;
   transition: color .1s;
@@ -191,12 +192,6 @@ main small {
 #nav-content:focus-within{
     transform: translateX(-100%);
   }
-
-
-
-
-
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -224,7 +219,6 @@ a {
 h1, h2, h3, h4 {
   margin: 0;
 }
-
 ul {
   padding: 0;
   list-style: none;
@@ -234,4 +228,12 @@ img {
   vertical-align: middle;
   height: auto;
   width: 100%;
+}
+.bibi-person_test1, .bibi-receipt_test1, .bibi-credit-card_test1{
+
+  width: 30px;
+  height: 30px;
+  margin-right: 1em;
+
+
 }
