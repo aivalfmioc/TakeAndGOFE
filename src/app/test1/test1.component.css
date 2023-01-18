@@ -63,6 +63,7 @@ main small {
   position: fixed;
   height: 100vh;
   width: 100%;
+  z-index: 10000;
   pointer-events: none;
 }
 #nav-container .bg {
@@ -129,7 +130,7 @@ main small {
 
 #nav-content {
   margin-top: 72px;
-  padding: 20px;
+  /* padding: 20px; */
   width: 90%;
   max-width: 300px;
   position: absolute;
@@ -153,7 +154,7 @@ main small {
 }
 
 #nav-content li a {
-  padding: 15px 5px;
+  padding: 20px;
   display: block;
   text-transform: uppercase;
   transition: color .1s;
@@ -161,9 +162,12 @@ main small {
 }
 
 #nav-content li a:hover {
-  color: #BF7497;
+  color: purple;
 }
-
+#nav-content  a:hover {
+  background-color: rgb(214, 205, 233);
+  color: purple;
+}
 #nav-content li:not(.small) + .small {
   margin-top: auto;
   border-top: 1px purple;
@@ -176,15 +180,17 @@ main small {
 .small {
   display: flex;
   align-self: center;
+  font-weight: bold;
 }
 
 .small a {
   font-size: 15px;
-  font-weight: 400;
-  color: purple;
+  font-weight: bold;
+  color: black;
 }
 .small a + a {
   margin-left: 15px;
+  font-weight: bold;
 }
 
 #nav-container:focus-within #nav-content {
@@ -233,16 +239,21 @@ img {
   height: auto;
   width: 100%;
 }
-.bibi-person_test1, .bibi-receipt_test1, .bibi-credit-card_test1{
-
+.bi_bi-house, .bibi-person_test1, .bibi-receipt_test1, .bibi-credit-card_test1{
   width: 40px;
   height: 35px;
   margin-right: 1em;
+}
+.home_test1{
+  width: 80%;
+  line-height: 32px;
+
 }
 .myaccount_test1{
   width: 80%;
   line-height: 32px;
 }
+
 .textfortest1{
   text-align: center;
   padding-top: 10em;
@@ -255,8 +266,68 @@ img {
   justify-content: center;
   align-items: center; 
 }
-.receipthistory_test1, .cardshistory_test1, .myaccount_test1{
+.home_test1, .receipthistory_test1, .cardshistory_test1, .myaccount_test1{
   width: 70%;
   float :right;
   line-height: 33px;
+}
+
+.textbox{
+
+  text-align: center;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;      
+  margin-bottom: 2em;
+}
+.selectDropdown{
+  width: 60%;
+  color: rgb(204, 204, 204);
+  height: 40px;
+  border-radius: 10px;
+  border-color: gainsboro;
+  margin: 20px;
+}
+.option{
+  color: black;
+}
+select {
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  -ms-appearance:none;
+  appearance:none;
+  outline:0;
+  box-shadow:none;
+  border-radius: 12px;
+  border-color: gray;
+  background-image: none;
+  flex: 1;
+  padding: 0 .5em;
+  color:gray;
+  cursor:pointer;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+}
+select::-ms-expand {
+  display: none;
+}
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  overflow: hidden;
+  border-radius: .25em;
+}
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  cursor:pointer;
+  pointer-events:none;
 }
