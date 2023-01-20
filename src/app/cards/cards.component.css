@@ -264,11 +264,11 @@ img {
     margin: 1.5em;
 }
 .ButtonAndTitle{
-    padding-top: 6em;
-    padding: 3em;
+    padding-top: 1.5em;
+    padding-left: 22.5em;
     text-align: center;
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 .titleNewcard{
     padding-top: 6em;
@@ -277,4 +277,14 @@ img {
 .buttonAddCard{
     margin-left: auto;
     text-decoration: none;
+}
+
+.iconplus{
+  z-index: 100000;
+  width:32;
+  height:32;
+  fill:purple;
+}
+.bibi-plus-circle{
+  
 }

@@ -10,6 +10,7 @@ import { UserService } from '../services/user.service';
 })
 export class AccountComponent {
   user : User = new User();
+  show: Boolean = true;
   constructor(public router: Router, public userService: UserService){
     this.user=JSON.parse(localStorage.getItem('user')!);
   }
@@ -22,5 +23,12 @@ export class AccountComponent {
   unset(){
     localStorage.removeItem('user');
     window.location.reload();
+  }
+  changePassword(){
+    this.show = !this.show;
+  }
+  onUpdate(){
+    // this.userService.updateUser(this.user.firstname);
+
   }
 }
