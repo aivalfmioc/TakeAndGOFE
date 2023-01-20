@@ -27,6 +27,11 @@ export class ItemService {
     let url = "http://localhost:8080/api/deleteItem/"+id
     return this.http.delete<any>(url);
   }
+
+  deleteOrder(): Observable<any> {
+    let url = "http://localhost:8080/api/deleteOrder/"+this.user.id;
+    return this.http.delete<any>(url);
+  }
   decreaseItem(id: number): Observable<any> {
     let url = "http://localhost:8080/api/decreaseItemQuantity/"+id
     return this.http.delete<any>(url);

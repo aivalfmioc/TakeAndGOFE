@@ -19,6 +19,7 @@ export class ScanComponent implements AfterViewInit{
   user: User = new User();
   shop: Shop = new Shop();
   item: Item = new Item();
+  
   constructor(private itemService: ItemService, private router: Router){
     this.user=JSON.parse(localStorage.getItem('user')!)
     this.shop=JSON.parse(localStorage.getItem('shop')!)
@@ -32,15 +33,16 @@ export class ScanComponent implements AfterViewInit{
   onValueChanges(result: any) {
     this.barcodeValue = result.codeResult.code;
     if(this.barcodeValue !== undefined){
-         console.log(this.barcodeValue)
-    this.item.barcode=this.barcodeValue;
-    this.item.userID=this.user.id;
-    this.item.shopID=this.shop.id;
-    console.log(this.item)
-    this.itemService.addItem(this.item).subscribe(data=>{
-      console.log(data);
-      this.router.navigateByUrl('/cart');
-    })
+      console.log(this.barcodeValue)
+      
+      this.item.barcode=this.barcodeValue;
+      this.item.userID=this.user.id;
+      this.item.shopID=this.shop.id;
+      console.log(this.item)
+      this.itemService.addItem(this.item).subscribe(data=>{
+        console.log(data);
+        this.router.navigateByUrl('/cart');
+      })
     }
   }
 

@@ -1,3 +1,10 @@
 export class Receipt {
-    user_id!: number;
+    id!:number;
+    cart_id!:number;
+
+    total!:Float32Array;
+
+    shopName!:string;
+
+    date!:string;
 }

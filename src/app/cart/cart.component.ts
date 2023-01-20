@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Item } from '../models/item';
 import { Shop } from '../models/shop';
 import { User } from '../models/user';
@@ -15,7 +16,8 @@ export class CartComponent {
   user!: User;
   items: Item[] = [];
   total!: Float32Array;
-  constructor(private itemService: ItemService){
+  isloading: Boolean = true;
+  constructor(private itemService: ItemService, private router: Router){
     this.shop = JSON.parse(localStorage.getItem('shop')!);
     this.user=JSON.parse(localStorage.getItem('user')!);
     this.updateCart();
@@ -27,17 +29,21 @@ export class CartComponent {
         this.itemService.getTotal().subscribe(data=>{
           console.log(data);
           this.total = data.total;
+          this.isloading = false;
         })
     })
   }
   increase(id: number){
+    this.isloading = true;
     this.itemService.increaseItem(id).subscribe(
       data=>{
         this.updateCart();
       },
     )
   }
+ 
   decrease(id: number){
+    this.isloading = true;
     this.itemService.decreaseItem(id).subscribe(
       data=>{
         this.updateCart();
@@ -45,6 +51,7 @@ export class CartComponent {
     )
   }
   deleteItem(id: number){
+    this.isloading = true;
     this.itemService.deleteItem(id).subscribe(
       data=>{
         console.log(data);
@@ -54,6 +61,7 @@ export class CartComponent {
             this.itemService.getTotal().subscribe(data=>{
               console.log(data);
               this.total = data.total;
+              this.isloading=false;
             })
           else{
             this.total= new Float32Array;
@@ -61,6 +69,11 @@ export class CartComponent {
         })
       }
     )
+  }
+  goToCheckout(){
+    if(this.items.length>0){
+      this.router.navigateByUrl('/checkout');
+    }
   }
   dragItem(){
     console.log("item dragged")

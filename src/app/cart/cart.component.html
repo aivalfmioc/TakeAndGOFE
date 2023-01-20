@@ -9,8 +9,9 @@
         </div>
         <div class="title">{{shop.name}}</div>
     </div>  
-    <div class="content">
-       <app-emptycart *ngIf="items.length==0"></app-emptycart>
+    <div class="cont">
+       <app-scann *ngIf="items.length==0"></app-scann>
+       <app-emptycart *ngIf="items.length!=0 && isloading"></app-emptycart>
         <div class="shopList">
             <div class="item" *ngFor="let item of items">
                 <div class="itemBottom" >
@@ -72,7 +73,7 @@
                         <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
                     </svg>
                 </div>
-                    <button mat-raised-button color="primary" routerLink="/checkout">Pay</button>
+                    <button mat-raised-button color="primary" (click)="goToCheckout()">Pay</button>
                 
                     
                 </div>

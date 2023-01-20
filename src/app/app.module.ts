@@ -40,6 +40,10 @@ import { CreditCardDirectivesModule } from 'angular-cc-library';
 import { Test1Component } from './test1/test1.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { EmptycartComponent } from './animations/emptycart/emptycart.component';
+import { ScannComponent } from './animations/scann/scann.component';
+import { OrderDoneComponent } from './order-done/order-done.component';
+import { PaymentLoadingComponent } from './animations/payment-loading/payment-loading.component';
+import { SeereceiptComponent } from './seereceipt/seereceipt.component';
 
 export function playerFactory(): any {  
   return import('lottie-web');
@@ -67,7 +71,11 @@ export function playerFactory(): any {
     SuccessComponent,
     TestComponent,
     Test1Component,
-    EmptycartComponent
+    EmptycartComponent,
+    ScannComponent,
+    OrderDoneComponent,
+    PaymentLoadingComponent,
+    SeereceiptComponent
   ],
   imports: [
     BrowserModule,
