@@ -2,6 +2,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { Shop } from '../models/shop';
 import { ShopService } from '../services/shop.service';
+import { User } from '../models/user';
+import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,15 +11,26 @@ import { ShopService } from '../services/shop.service';
   encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent {
+  page: number = 1;
+  user : User = new User();
   shops: Shop[] = [];
   selected: any;
-  constructor(private shopService: ShopService, private router: Router){
+  constructor(private shopService: ShopService,public router: Router, public userService: UserService){
+    this.user=JSON.parse(localStorage.getItem('user')!);
     this.shopService.getShops().subscribe(data=>{
       this.shops=data;
   })
   }
-  ngOnInit() {
+  
+  set(){
+    localStorage.setItem('user','hello');
+    this.router.navigateByUrl('/');
     
+  }
+  ngOnInit(): void{}
+  unset(){
+    localStorage.removeItem('user');
+    window.location.reload();
   }
   findShop(id: number){
     return this.shops.find(shop => shop.id == id);
@@ -29,4 +42,11 @@ export class HomeComponent {
     localStorage.setItem('shop',JSON.stringify(shop));
     this.router.navigateByUrl('/cart');
   }
+  // changeContent(page: number){
+  //   this.page = page;
+  //   document.getElementById('nav-content')!.style.transform = "translateX(-100%)";
+  // }
+  // buttonClicked(){
+  //   document.getElementById('nav-content')!.style.transform = "none";
+  // }
 }
