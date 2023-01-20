@@ -44,6 +44,7 @@ import { ScannComponent } from './animations/scann/scann.component';
 import { OrderDoneComponent } from './order-done/order-done.component';
 import { PaymentLoadingComponent } from './animations/payment-loading/payment-loading.component';
 import { SeereceiptComponent } from './seereceipt/seereceipt.component';
+import { NocardsComponent } from './nocards/nocards.component';
 
 export function playerFactory(): any {  
   return import('lottie-web');
@@ -75,7 +76,8 @@ export function playerFactory(): any {
     ScannComponent,
     OrderDoneComponent,
     PaymentLoadingComponent,
-    SeereceiptComponent
+    SeereceiptComponent,
+    NocardsComponent
   ],
   imports: [
     BrowserModule,

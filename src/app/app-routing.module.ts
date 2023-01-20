@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { MapComponent } from './map/map.component';
 import { MenuComponent } from './menu/menu.component';
 import { NewcardComponent } from './newcard/newcard.component';
+import { NocardsComponent } from './nocards/nocards.component';
 import { OrderDoneComponent } from './order-done/order-done.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ReceiptComponent } from './receipt/receipt.component';
@@ -106,6 +107,11 @@ const routes: Routes = [
     canActivate: [AuthGuardService]
   },
   {
+    path: 'nocards',
+    component: NocardsComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
     path: 'orderDone',
     component: OrderDoneComponent,
     canActivate: [AuthGuardService]
@@ -115,6 +121,7 @@ const routes: Routes = [
     component: SeereceiptComponent,
     canActivate: [AuthGuardService]
   },
+
   {
     path: '**', redirectTo: 'home'
   }
