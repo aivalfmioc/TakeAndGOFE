@@ -8,6 +8,6 @@ import { AnimationOptions } from 'ngx-lottie';
 })
 export class EmptycartComponent {
   options: AnimationOptions = {    
-    path: '/assets/lottie/shoppingcartloader.json'  
+    path: '/assets/lottie/loadCart.json'  
   }; 
 }

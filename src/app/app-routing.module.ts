@@ -12,10 +12,12 @@ import { LoginComponent } from './login/login.component';
 import { MapComponent } from './map/map.component';
 import { MenuComponent } from './menu/menu.component';
 import { NewcardComponent } from './newcard/newcard.component';
+import { OrderDoneComponent } from './order-done/order-done.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ReceiptComponent } from './receipt/receipt.component';
 import { RegisterComponent } from './register/register.component';
 import { ScanComponent } from './scan/scan.component';
+import { SeereceiptComponent } from './seereceipt/seereceipt.component';
 import { TestComponent } from './test/test.component';
 import { Test1Component } from './test1/test1.component';
 
@@ -101,6 +103,16 @@ const routes: Routes = [
   {
     path: 'test1',
     component: Test1Component,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'orderDone',
+    component: OrderDoneComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'seeReceipt/:id',
+    component: SeereceiptComponent,
     canActivate: [AuthGuardService]
   },
   {
