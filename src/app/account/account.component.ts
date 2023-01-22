@@ -28,7 +28,18 @@ export class AccountComponent {
     this.show = !this.show;
   }
   onUpdate(){
-    // this.userService.updateUser(this.user.firstname);
+    console.log(this.user)
+    let u  = new User();
+    u.id=this.user.id;
+    u.firstname = this.user.firstname;
+    u.lastname = this.user.lastname;
+    u.email = this.user.email;
+    this.userService.updateUser(u).subscribe(
+      data=>{
+        console.log(data)
+        localStorage.setItem('user',JSON.stringify(this.user));
+      }
+    )
 
   }
 }

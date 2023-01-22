@@ -16,4 +16,8 @@ export class ReceiptService {
     let url = "http://localhost:8080/api/getReceipt/"+id;
     return this.http.get<any>(url);
   }
+  getReceipts(id: number): Observable<any> {
+    let url = "http://localhost:8080/api/getReceipts/"+id;
+    return this.http.get<any>(url);
+  }
 }

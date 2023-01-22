@@ -6,7 +6,7 @@ const config: CapacitorConfig = {
   webDir: 'dist/take-and-go-fe',
   bundledWebRuntime: false,
   server: {
-    url: 'http://192.168.137.1:4200',
+    url: 'http://192.168.1.103:4200',
     cleartext: true,
   }
 };

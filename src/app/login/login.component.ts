@@ -15,16 +15,9 @@ export class LoginComponent implements OnInit{
   valid: Boolean = false;
   login: Boolean = false;
   constructor(public router: Router, public userService: UserService){}
-  set(){
-    localStorage.setItem('user','hello');
-    this.router.navigateByUrl('/');
-    
-  }
+ 
   ngOnInit(): void{}
-  unset(){
-    localStorage.removeItem('user');
-    window.location.reload();
-  }
+
 
   passwordhasError(){
     const value = this.user.password;

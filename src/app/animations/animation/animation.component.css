@@ -1,9 +1,14 @@
 .lottie-animationmt-10{
-    padding-top: 2em;
 }
 .wrapper {
     display: grid;
     place-items: center;
+  }
+  .wraplot{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 .typing-demo {
     width: 20ch; /*dimension of the text written*/

@@ -22,6 +22,11 @@ export class ItemService {
     let url = "http://localhost:8080/api/getCards/"+this.user.id;
     return this.http.get<any>(url);
   }
+  getProd(): Observable<any> {
+    this.user = JSON.parse(localStorage.getItem('user')!);
+    let url = "http://localhost:8080/api/getProducts";
+    return this.http.get<any>(url);
+  }
 
   deleteItem(id: number): Observable<any> {
     let url = "http://localhost:8080/api/deleteItem/"+id

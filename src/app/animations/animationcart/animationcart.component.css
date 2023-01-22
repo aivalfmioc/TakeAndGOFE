@@ -1,5 +1,6 @@
 .lottie-animationmt-10{
-    padding-top: 4em;
+    bottom: 0;
+    position: fixed;
 }
 .animationCartText{
  width: 100%;

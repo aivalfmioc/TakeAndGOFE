@@ -47,4 +47,20 @@
         </ul>
       </div>
     </div>
+    <div class="contentReceipts">
+      <div class="someCont">
+      <div class="containerR"  *ngFor="let receipt of receipts">
+        <div class="receiptDiv">
+          <div class="firstline">
+            <div class="releft" style="font-weight:bold">{{receipt.shopName}}</div>
+            <div class="reright" style="color:gray">{{receipt.date}}</div>
+          </div>
+          <div class="secondline">
+            <div class="releft" style="color:gray"><button class="buttonDetails" (click)="seeReceipt(receipt.cart_id)">Details</button></div>
+            <div class="reright" style="font-weight:bold">Total ${{receipt.total}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
 </div>

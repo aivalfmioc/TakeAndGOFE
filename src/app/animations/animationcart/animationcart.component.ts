@@ -15,8 +15,8 @@ export class AnimationcartComponent implements OnInit{
   constructor(private router: Router) { }  
 
   ngOnInit(): void { 
-    setTimeout(() => {this.router.navigateByUrl('/home');
-  }, 3000)
+  //   setTimeout(() => {this.router.navigateByUrl('/home');
+  // }, 3000)
    }
 
   // This is the component function that binds to the animationCreated event from the package  

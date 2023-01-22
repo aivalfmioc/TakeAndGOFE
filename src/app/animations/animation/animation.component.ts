@@ -22,6 +22,6 @@ export class AnimationComponent implements OnInit {
 
   // This is the component function that binds to the animationCreated event from the package  
   onAnimate(animationItem: AnimationItem): void {    
-    console.log(animationItem);  
+    //console.log(animationItem);  
   }
 }

@@ -55,49 +55,10 @@
       </svg>
     </a>
     </div>
-    <section class="container"> 
-      <h1 class="container__h1"></h1>
-      <div class="payment">
-        <div id="card-shake" class="card">
-          <div class="card-content">
-            <div class="logo-visa">
-              <img style="width: 90%;margin: 15px;" src="http://www.ultimatesecuritydevices.com/assets/images/credit_card_logo.png"/>
-            </div>
-            <h2 class="container__h1 container__h1--h2">Card Number</h2>
-            <h3 class="container__h3">
-              <div class="card-number">
-                <span class="card__span">**** **** **** ****</span>
-              </div>                               
-            </h3>
-            <h2 class="container__h1 container__h1--h2">Expiration<span class="card__cvc-1">CVC</span></h2> 
-            <h3 class="container__h3">
-              <span class="card__exp-month">
-                <span class="card__span">
-                  11
-                </span>
-              </span>
-              <span class="e-divider">
-                <span>
-                   /
-                </span>                
-              </span>
-              <span class="card__exp-year">
-                <span class="card__span">
-                   11
-                </span>
-              </span>
-              <span class="card__cvc-2">
-                <span class="card__span">123</span>
-              </span> 
-            </h3>
-          </div>
-        </div>
-      </div>
-      </section>
-      <section class="container2"> 
+      <section class="container2" > 
         <h1 class="container__h1"></h1>
         <div class="payment">
-          <div id="card-shake" class="card2">
+          <div id="card-shake" class="card2" *ngFor="let card of cards">
             <div class="card-content">
               <div class="logo-visa">
                 <img style="width: 90%;margin: 15px;" src="http://www.ultimatesecuritydevices.com/assets/images/credit_card_logo.png"/>
@@ -105,14 +66,14 @@
               <h2 class="container__h1 container__h1--h2">Card Number</h2>
               <h3 class="container__h3">
                 <div class="card-number">
-                  <span class="card__span">**** **** **** ****</span>
+                  <span class="card__span">**** **** **** {{card.code}}</span>
                 </div>                               
               </h3>
               <h2 class="container__h1 container__h1--h2">Expiration<span class="card__cvc-1">CVC</span></h2> 
               <h3 class="container__h3">
                 <span class="card__exp-month">
                   <span class="card__span">
-                    11
+                    {{card.month}}
                   </span>
                 </span>
                 <span class="e-divider">
@@ -122,11 +83,11 @@
                 </span>
                 <span class="card__exp-year">
                   <span class="card__span">
-                     11
+                     {{card.year}}
                   </span>
                 </span>
                 <span class="card__cvc-2">
-                  <span class="card__span">123</span>
+                  <span class="card__span">000</span>
                 </span> 
               </h3>
             </div>
