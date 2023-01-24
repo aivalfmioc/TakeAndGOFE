@@ -1,4 +1,5 @@
 import { CapacitorConfig } from '@capacitor/cli';
+import { AppConst } from 'src/app/constants';
 
 const config: CapacitorConfig = {
   appId: 'com.example.app',
@@ -6,7 +7,8 @@ const config: CapacitorConfig = {
   webDir: 'dist/take-and-go-fe',
   bundledWebRuntime: false,
   server: {
-    url: 'http://192.168.1.103:4200',
+    url: 'http://'+AppConst.IP+':4200',
+    androidScheme: 'http',
     cleartext: true,
   }
 };

@@ -16,6 +16,7 @@ export class HomeComponent {
   shops: Shop[] = [];
   selected: any;
   constructor(private shopService: ShopService,public router: Router, public userService: UserService){
+    // document.getElementById('nav-content')!.style.transform = "translateX(-100%);";
     this.user=JSON.parse(localStorage.getItem('user')!);
     this.shopService.getShops().subscribe(data=>{
       this.shops=data;
@@ -46,7 +47,14 @@ export class HomeComponent {
   //   this.page = page;
   //   document.getElementById('nav-content')!.style.transform = "translateX(-100%)";
   // }
-  // buttonClicked(){
-  //   document.getElementById('nav-content')!.style.transform = "none";
-  // }
+  openMenu(){
+    document.getElementById('nav-content')!.style.transform = "translateX(0%)";
+    document.getElementById('bg')!.style.visibility = "visible";
+    document.getElementById('bg')!.style.opacity = "0.6";
+  }
+  closeMenu(){
+    document.getElementById('nav-content')!.style.transform = "translateX(-100%)";
+    document.getElementById('bg')!.style.visibility = "hidden";
+    document.getElementById('bg')!.style.opacity = "0.6";
+  }
 }

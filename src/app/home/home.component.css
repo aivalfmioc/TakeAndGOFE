@@ -66,15 +66,14 @@ main small {
   z-index: 10000;
   pointer-events: none;
 }
-#nav-container .bg {
+#bg {
   position: absolute;
-  top: 70px;
   left: 0;
   width: 100%;
-  height: calc(100% - 70px);
+  height: 100%;
   visibility: hidden;
   opacity: 0;
-  transition: .3s;
+  transition: .1s;
   background: #000;
 }
 #nav-container:focus-within .bg {
@@ -129,14 +128,14 @@ main small {
 }
 
 #nav-content {
-  margin-top: 72px;
-  /* padding: 20px; */
+  /* margin-top: 72px; */
+  padding: 20px;
   width: 90%;
   max-width: 300px;
   position: absolute;
   top: 0;
   left: 0;
-  height: calc(100% - 70px);
+  height:100%;
   background: #ececec;
   pointer-events: auto;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -144,6 +143,7 @@ main small {
   transition: transform .3s;
   will-change: transform;
   contain: paint;
+  z-index:1;
 }
 
 #nav-content ul {

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AppConst } from '../constants';
 import { IntObject } from '../models/int-object';
 import { Receipt } from '../models/receipt';
 import { User } from '../models/user';
@@ -14,17 +15,17 @@ export class ItemService {
 
   getItems(): Observable<any> {
     this.user = JSON.parse(localStorage.getItem('user')!);
-    let url = "http://localhost:8080/api/getItems/"+this.user.id;
+    let url = AppConst.endpoint+"/getItems/"+this.user.id;
     return this.http.get<any>(url);
   }
   getCards(): Observable<any> {
     this.user = JSON.parse(localStorage.getItem('user')!);
-    let url = "http://localhost:8080/api/getCards/"+this.user.id;
+    let url = AppConst.endpoint+"/getCards/"+this.user.id;
     return this.http.get<any>(url);
   }
   getProd(): Observable<any> {
     this.user = JSON.parse(localStorage.getItem('user')!);
-    let url = "http://localhost:8080/api/getProducts";
+    let url = AppConst.endpoint+"/getProducts";
     return this.http.get<any>(url);
   }
 
@@ -47,11 +48,11 @@ export class ItemService {
   }
   getTotal(): Observable<any> {
     this.user = JSON.parse(localStorage.getItem('user')!);
-    let url = "http://localhost:8080/api/getPrice/"+this.user.id;
+    let url = "http://192.168.1.6:8080/api/getPrice/"+this.user.id;
     return this.http.get<any>(url);
   }
   addItem(item :Partial<{ barcode: string | null; userID: number | null; shopID: number | null; }>): Observable<Object>{
-    return this.http.post("http://localhost:8080/api/addToCart",item);
+    return this.http.post("http://192.168.1.6:8080/api/addToCart",item);
   }
   addOrder(): Observable<any>{
     return this.http.delete("http://localhost:8080/api/addOrder/"+this.user.id);
