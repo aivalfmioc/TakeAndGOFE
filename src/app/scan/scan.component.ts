@@ -45,7 +45,7 @@ export class ScanComponent implements AfterViewInit{
     this.barcodeValue = result.codeResult.code;
     if(this.barcodeValue !== undefined){
       console.log(this.barcodeValue)
-      this.barcodeScanner.stop()
+      this.barcodeScanner.stop();
       this.item.barcode=this.barcodeValue;
       this.item.userID=this.user.id;
       this.item.shopID=this.shop.id;

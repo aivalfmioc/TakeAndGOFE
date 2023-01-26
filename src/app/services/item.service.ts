@@ -48,11 +48,11 @@ export class ItemService {
   }
   getTotal(): Observable<any> {
     this.user = JSON.parse(localStorage.getItem('user')!);
-    let url = "http://192.168.1.6:8080/api/getPrice/"+this.user.id;
+    let url = "http://localhost:8080/api/getPrice/"+this.user.id;
     return this.http.get<any>(url);
   }
   addItem(item :Partial<{ barcode: string | null; userID: number | null; shopID: number | null; }>): Observable<Object>{
-    return this.http.post("http://192.168.1.6:8080/api/addToCart",item);
+    return this.http.post("http://localhost:8080/api/addToCart",item);
   }
   addOrder(): Observable<any>{
     return this.http.delete("http://localhost:8080/api/addOrder/"+this.user.id);

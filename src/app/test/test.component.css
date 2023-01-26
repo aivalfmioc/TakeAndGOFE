@@ -89,7 +89,7 @@
   position: relative;
   margin: 0 auto;
   margin-bottom: 5px;
-  background-image: linear-gradient(to bottom left, #ffecc7, #d0b978);
+  background-image: linear-gradient(to bottom left, #ffecc7, #996ba9);
   overflow: hidden;
   z-index: 5;
   -webkit-border-radius: 6px;
@@ -273,7 +273,7 @@
   width: 60px;
 }
 
-.button{
+.buttonn{
   margin: 20px auto; 
   margin-bottom: 40px; 
   padding: 16px 32px;
@@ -289,7 +289,7 @@
   text-decoration: none;
   font-size: 18px;
   letter-spacing: .5px;
-  background: #212327;
+  background: #673ab7;
   color: #fff;
   -webkit-box-shadow: 0 2px 8px -1px rgba(21, 25, 36, 0.32);
           box-shadow: 0 2px 8px -1px rgba(21, 25, 36, 0.32);
@@ -298,7 +298,7 @@
           transition: transform .44s ease, box-shadow .44s ease;
 }
   
-.button:hover{
+.buttonn:hover{
   -webkit-transform: translateY(-4px);
           transform: translateY(var(-4px));
   -webkit-box-shadow: 0 4px 20px -2px rgba(21, 25, 36, 0.5); 

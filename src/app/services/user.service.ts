@@ -3,12 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AppComponent } from '../app.component';
 import { AppConst } from '../constants';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
+    u: User = new User();
  
   constructor(private http: HttpClient) { }
 
@@ -29,6 +31,8 @@ export class UserService {
     return this.http.put(AppConst.endpoint+"/updateUserr",user);
   }
   changePassword(user :Partial<{ id:number|null; oldPassword: string | null; newPassword: string | null;}>): Observable<Object>{
+    this.u = JSON.parse(localStorage.getItem('user')!);
+    user.id = this.u.id;
     return this.http.put(AppConst.endpoint+"/changePassword",user);
   }
 }

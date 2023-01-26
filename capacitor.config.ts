@@ -7,8 +7,7 @@ const config: CapacitorConfig = {
   webDir: 'dist/take-and-go-fe',
   bundledWebRuntime: false,
   server: {
-    url: 'http://'+AppConst.IP+':4200',
-    androidScheme: 'http',
+    url: 'http://192.168.1.104:4200',
     cleartext: true,
   }
 };

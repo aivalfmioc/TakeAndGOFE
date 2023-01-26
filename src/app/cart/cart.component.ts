@@ -4,13 +4,12 @@ import { Item } from '../models/item';
 import { Shop } from '../models/shop';
 import { User } from '../models/user';
 import { ItemService } from '../services/item.service';
-import { ShopService } from '../services/shop.service';
-
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
+
 export class CartComponent {
   shop!: Shop;
   user!: User;
@@ -22,6 +21,7 @@ export class CartComponent {
     this.user=JSON.parse(localStorage.getItem('user')!);
     this.updateCart();
   }
+
   updateCart(){
     this.itemService.getItems().subscribe(data=>{
       this.items=data;

@@ -58,7 +58,7 @@ input{
 	outline: none;
 	border-radius: 5px;
 }
-button{
+.loginButton{
 	width: 60%;
 	height: 40px;
 	margin: 10px auto;
@@ -75,7 +75,7 @@ button{
 	transition: .2s ease-in;
 	cursor: pointer;
 }
-button:hover{
+.loginButton:hover{
 	background: #6d44b8;
 }
 .login{
@@ -138,18 +138,18 @@ input{
 	outline: none; */
 	/* border-radius: 5px; */
 }
-button{
+/* button{
 	/* width: 60%;
 	height: 40px;
 	margin: 10px auto; */
-	justify-content: center;
+	/* justify-content: center;
 	display: block;
 	color: #fff;
 	background: #573b8a;
 	font-size: 1em;
-	font-weight: bold;
+	font-weight: bold; */
 	/* margin-top: 20px; */
-	outline: none;
+	/* outline: none;
 	border: none;
 	border-radius: 5px;
 	transition: .2s ease-in;
@@ -157,7 +157,7 @@ button{
 }
 button:hover{
 	background: #6d44b8;
-}
+} */ 
 .login{
 	height: 460px;
 	background: #eee;
