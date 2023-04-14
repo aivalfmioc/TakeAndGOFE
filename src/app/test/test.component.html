@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="html">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="ie-edge"/>
+    <meta name="keywords" content="Yulian Brito, Yulian, Brito, Yulian Developer, Frontend Developer, Credit Card 1"/>
+    <meta name="author" content="Yulian Brito"/>
+    <title>Credit Card 1</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display|Quicksand:400,700|Open+Sans|PT+Mono"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Overpass+Mono"/>
+  </head>
+  <app-success *ngIf="success" :url="/cards"></app-success>
+    <body class="body">
+
+  <!-- Card -->
+  <div ><a routerLink="/cards">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="exitButtonnewcard" fill="currentColor"  viewBox="0 0 16 16">
+        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+    </svg>
+</a>
+</div>
+    <section class="container"> 
+      <h1 class="container__h1">{{title}}</h1>
+      <div class="payment">
+        <div id="card-shake" class="card">
+          <div class="card-content">
+            <div class="logo-visa">
+              <img style="width: 90%;margin: 15px;" src="http://www.ultimatesecuritydevices.com/assets/images/credit_card_logo.png"/>
+            </div>
+            <h2 class="container__h1 container__h1--h2">Card Number</h2>
+            <h3 class="container__h3">
+              <div class="card-number">
+                <span class="card__span">**** **** **** ****</span>
+              </div>                               
+            </h3>
+            <h2 class="container__h1 container__h1--h2">Expiration<span class="card__cvc-1">CVC</span></h2> 
+            <h3 class="container__h3">
+              <span class="card__exp-month">
+                <span class="card__span">
+                  11
+                </span>
+              </span>
+              <span class="e-divider">
+                <span>
+                   /
+                </span>                
+              </span>
+              <span class="card__exp-year">
+                <span class="card__span">
+                   11
+                </span>
+              </span>
+              <span class="card__cvc-2">
+                <span class="card__span">123</span>
+              </span> 
+            </h3>
+          </div>
+        </div>
+
+  <!-- Card Form -->
+
+        <form class="card-form" [formGroup]="form" (ngSubmit)="onSubmit(myform)" #myform="ngForm">
+          <div  class="field">
+            <svg xmlns="http://www.w3.org/2000/svg" class="card-icon" width="28px" height="28px" fill="gray" viewBox="0 0 16 16">
+              <path d="M14 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+              <path d="M2 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+            <input  class="field__input"  name='card-number' placeholder='1234 5678 9123 4567' id="cc-number" formControlName="creditCard" type="tel" autocomplete="cc-number" ccNumber/>
+            <div style="color:red;font-size: initial;margin: 2px;" *ngIf="form.controls['creditCard'].touched && form.controls['creditCard'].invalid">
+              Invalid credit card number
+          </div>
+          </div>
+          <div class="field field--space">
+            <svg xmlns="http://www.w3.org/2000/svg" class="card-icon" width="28px" height="28px" fill="gray" viewBox="0 0 16 16">
+              <path d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z"/>
+              <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+            </svg>
+            <input formControlName="expirationDate"  class="field__input field__input--cardexp-1" 
+            name="expires-month" placeholder="MM/YY" 
+            id="cc-exp-date"  type="tel" autocomplete="cc-exp" ccExp
+            />
+            <div style="color:red;font-size: initial;margin: 2px;" *ngIf="form.controls['expirationDate'].touched && form.controls['expirationDate'].invalid">
+              Invalid date
+          </div>
+            <!-- <input id="expires-year" class="field__input field__input--cardexp-2" type="tel" name="expires-year" placeholder="YY" allowed-pattern="[0-9]" maxlength="2"/> -->
+          </div>
+          <div class="field">
+            <svg xmlns="http://www.w3.org/2000/svg" class="card-icon" width="28px" height="28px" fill="gray"  viewBox="0 0 16 16">
+              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
+              <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
+            </svg>
+            <input formControlName="cvc" id="card-cvc" class="field__input field__input--cardcvc" type="tel" name="cardcvc" placeholder="123" maxlength="3" autocomplete="off"/>
+            <div style="color:red;font-size: initial;margin: 2px;" *ngIf="form.controls['cvc'].touched && form.controls['cvc'].invalid">
+              Invalid CVC
+          </div>
+          </div>
+          <div *ngIf='errorBE!=""' style="color:red;font-size: initial;margin: 2px;">{{errorBE}}</div>
+          <button class="buttonn" type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+    
+  </body>
+</html>

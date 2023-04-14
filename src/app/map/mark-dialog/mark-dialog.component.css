@@ -1,0 +1,21 @@
+.actions{
+    display: block;
+}
+button {
+    margin: 8px;
+}
+.leftBp{
+    width:50%;
+    float: left;
+}
+.rightBp{
+    width: 50%;
+    float: right;
+    align-items: right;
+}
+.leftButton{
+    float: left;
+}
+.rightButton{
+    float: right;
+}

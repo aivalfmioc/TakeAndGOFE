@@ -1,8 +1,8 @@
-.exitButton{
+.exitButtonMap{
     position:absolute;
     top:15px;
     margin-left: 15px;
-    height: 4em;
-    width: 4em;
-    font-weight: 400;
+    width: 2em;
+    height: 2em;
+    margin: 1.5em;
 }

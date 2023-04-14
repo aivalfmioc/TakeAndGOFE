@@ -1,0 +1,70 @@
+ 
+ <div class="bod">
+    <!-- <div class="container">
+    <div class="header">
+        <div class="backButtonCart">
+            <a routerLink="/receipt">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="title">Receipt</div>
+    </div>
+    <div class="content" *ngIf="!isLoading">
+        <div class="cont2">
+            <div class="cont1">
+                <div class="contitem">
+                    <div class="leftC"><div class="payment">Shop</div></div>
+                    <div class="leftR">{{receipt.shopName}}</div>
+                </div>
+                <div class="contitem">
+                    <div class="leftC"><div class="payment">Date</div></div>
+                    <div class="leftR">{{receipt.date}}</div>
+                </div>
+                <div class="contitem">
+                    <div class="leftC"><div class="payment">Total</div></div>
+                    <div class="leftR">${{receipt.total}}</div>
+                </div>
+             
+            </div>
+            <div class="summary">
+              <div class="summText">
+                Product List
+              </div>
+              <div class="summItems">
+                <div class="summItem" *ngFor="let item of items">
+                  {{item.quantity}}x {{item.name}} <span style="float:right"> ${{item.price}}</span>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+</div>  -->
+<div class="backButtonCart">
+    <a routerLink="/receipt">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+    </a>
+</div>
+<div class="receipt" *ngIf="!isLoading">
+    <div class="receipt__header">
+      <p class="receipt__title">
+       {{receipt.shopName}}
+      </p>
+      <p class="receipt__date">{{receipt.date}}</p>
+    </div>
+    <dl class="receipt__list">
+      <div class="receipt__list-row" *ngFor="let item of items">
+        <dt class="receipt__item">{{item.quantity}}x {{item.name}}</dt>
+        <dd class="receipt__cost">${{item.price}}</dd>
+      </div>
+     
+      <div class="receipt__list-row receipt__list-row--total">
+        <dt class="receipt__item">Total</dt>
+        <dd class="receipt__cost">${{receipt.total}}</dd>
+      </div>
+    </dl>
+  </div>
+  </div>

@@ -1,0 +1,28 @@
+.lottie-animationmt-10{
+    height: 70%;
+}
+.animationCartText{
+    width: 100%;
+    text-align: center;
+    color: rgb(179, 179, 179);
+}
+.textSucc{
+    top: -7em;
+    position: relative;
+    z-index: 100;
+    font-size: 1.2em;
+    color: #271f3e;
+}
+.payButton{
+    width: 100%;
+}
+.pay{
+    background-color: #7d1cec;
+    color: white;
+    width: 75%;
+    border: none;
+    height: 2em;
+    margin-top: 0.5em;
+    border-radius: 8px;
+    font-size: 19px;
+}

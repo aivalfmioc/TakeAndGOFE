@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
+
+* {
+  outline: none;
+}
+
+.container{
+  width: 390px;
+  /* height: 530px; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* background: #e6e6e6; */
+  overflow: hidden;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-border-radius: 9px;
+          border-radius: 9px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.09), 0 6px 6px rgba(0, 0, 0, 0.13);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.09), 0 6px 6px rgba(0, 0, 0, 0.13);
+}
+
+.container2{
+  margin-top: -8em;
+  border-radius: 9px;
+}
+
+.payment{
+  padding-top: 12em;
+  width: 370px;
+  height: 800px;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card{
+  width: 300px;
+  height: 190px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  background-image: linear-gradient(to bottom left, #ffecc7, #d0b978);
+  overflow: hidden;
+  z-index: 5;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-box-shadow: 0 15px 24px rgba(37,44,65,0.32);
+          box-shadow: 0 15px 24px rgba(37,44,65,0.32);
+}
+
+.card2{
+  width: 300px;
+  height: 190px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  background-image: linear-gradient(to bottom left, #ffecc7, #996ba9);
+  overflow: hidden;
+  z-index: 5;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-box-shadow: 0 15px 24px rgba(37,44,65,0.32);
+          box-shadow: 0 15px 24px rgba(37,44,65,0.32);
+  margin-top:2em
+}
+
+.card-content{
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  z-index: 5;
+}
+
+.logo-visa{
+  position: relative;
+  margin-top: -20px;
+  left: 184px;
+  height: 70px;
+  width: 90px;
+}
+
+.card__flag{
+  position: absolute;
+  left: 5px;
+  top: 30%;
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background: #ce0e1d;
+}
+
+.card__flag--yellow{
+  left: auto;
+  right: 5px;
+  background: #e39833;
+}  
+
+.card__flag--yellow::after{
+  content: "MasterCard";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-46.5px, -7px);
+          transform: translate(-46.5px, -7px);
+  font-size: 11.2px;
+  font-family: "Raleway", sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  color: #fff;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+} 
+
+.card__cvc-1{
+  margin-left: 87px;
+}
+
+.card__exp-month{
+  width:18px; 
+  display: inline-block;
+}
+
+.card__exp-year{
+  width:18px; 
+  display: inline-block;
+}
+
+.card__cvc-2{
+  margin-left: 90px;
+}
+
+.wrong-entry {
+  -webkit-animation: wrong-log .45ss;
+  animation: wrong-log .45s;
+}
+
+@-webkit-keyframes wrong-log {
+  0%, 100% {
+    left: 0px;
+  }
+  20% , 60% {
+    left: 15px;
+  }
+  40% , 80% {
+    left: -15px;
+  }
+}
+
+@keyframes wrong-log {
+  0%, 100% {
+    left: 0px;
+  }
+  20% , 60% {
+    left: 15px;
+  }
+  40% , 80% {
+    left: -15px;
+  }
+}
+strong {
+  font-weight: 600;
+}
+
+.page {
+  width: 100%;
+  height: 100vh;
+  background: #fdfdfd;
+  font-family: 'Encode Sans Condensed', sans-serif;
+  font-weight: 600;
+  letter-spacing: .03em;
+  color: #212121;
+}
+
+header {
+  background: #673ab7;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+main {
+  padding: 70px 20px 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main > div {
+  margin: auto;
+  max-width: 600px;
+}
+
+main h2 span {
+  color: #BF7497;
+}
+
+main p {
+  line-height: 1.5;
+  font-weight: 200;
+  margin: 20px 0;
+}
+
+main small {
+  font-weight: 300;
+  /* color: #888; */
+  color: purple;
+}
+
+#nav-container {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 10000;
+  pointer-events: none;
+}
+#bg {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: .1s;
+  background: #000;
+}
+#nav-container:focus-within .bg {
+  visibility: visible;
+  opacity: .6;
+}
+#nav-container * {
+  visibility: visible;
+}
+.exitButton{
+  color: #673ab7;
+  height: 2em;
+  width: 2em;
+}
+.button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  /* -webkit-appearance: none; */
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  height: 70px;
+  width: 30px;
+  cursor: pointer;
+  pointer-events: auto;
+  margin-left: 25px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.icon-bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  /* background: #aaa; */
+  background: white;
+  transition: .3s;
+}
+.icon-bar + .icon-bar {
+  margin-top: 5px;
+}
+
+
+
+#nav-content {
+  /* margin-top: 72px; */
+  padding: 20px;
+  width: 90%;
+  max-width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height:100%;
+  background: white;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  transform: translateX(-100%);
+  transition: transform .3s;
+  will-change: transform;
+  contain: paint;
+  z-index:1;
+    color: #673ab7;
+}
+
+#nav-content ul {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#nav-content li a {
+  padding: 20px;
+  display: block;
+  text-transform: uppercase;
+  transition: color .1s;
+  touch-action: manipulation;
+}
+
+#nav-content li a:hover {
+  color: purple;
+}
+#nav-content  a:hover {
+  background-color: rgb(214, 205, 233);
+  color: purple;
+}
+#nav-content li:not(.small) + .small {
+  margin-top: auto;
+  border-top: 1px purple;
+}
+#nav-content li:focus  {
+    background: red;
+    outline: 0;
+  }
+
+.small {
+  display: flex;
+  align-self: center;
+  font-weight: bold;
+}
+
+.small a {
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+}
+.small a + a {
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+#nav-container:focus-within #nav-content {
+  transform: none;
+}
+
+#nav-content:focus-within{
+    transform: translateX(-100%);
+  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+a,
+a:visited,
+a:focus,
+a:active,
+a:link {
+  text-decoration: none;
+  outline: 0;
+  display: flex;
+}
+
+a {
+  display: flex;
+  color: currentColor;
+  transition: .2s ease-in-out;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+  height: auto;
+  width: 100%;
+}
+.bi_bi-house, .bibi-person_test1, .bibi-receipt_test1, .bibi-credit-card_test1{
+  width: 40px;
+  height: 35px;
+  margin-right: 1em;
+}
+.home_test1{
+  width: 80%;
+  line-height: 32px;
+
+}
+.myaccount_test1{
+  width: 80%;
+  line-height: 32px;
+}
+.home_test1, .receipthistory_test1, .cardshistory_test1, .myaccount_test1{
+  width: 70%;
+  float :right;
+  line-height: 33px;
+}
+.exitButtonCards{
+    width: 2em;
+    height: 2em;
+    margin: 1.5em;
+}
+.ButtonAndTitle{
+    padding-top: 1.5em;
+    padding-left: 22.5em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.titleNewcard{
+    padding-top: 6em;
+    margin: 0;
+}
+.buttonAddCard{
+    margin-left: auto;
+    text-decoration: none;
+}
+
+.iconplus{
+  z-index: 100000;
+  width:32;
+  height:32;
+  fill:purple;
+}
+
+.bibi-plus-circle{
+  
+}

@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
+
+* {
+  outline: none;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.page {
+  width: 100%;
+  height: 100vh;
+  background: #fdfdfd;
+  font-family: 'Encode Sans Condensed', sans-serif;
+  font-weight: 600;
+  letter-spacing: .03em;
+  color: #212121;
+}
+
+header {
+  background: #673ab7;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+main {
+  padding: 70px 20px 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main > div {
+  margin: auto;
+  max-width: 600px;
+}
+
+main h2 span {
+  color: #BF7497;
+}
+
+main p {
+  line-height: 1.5;
+  font-weight: 200;
+  margin: 20px 0;
+}
+
+main small {
+  font-weight: 300;
+  /* color: #888; */
+  color: purple;
+}
+
+#nav-container {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 10000;
+  pointer-events: none;
+}
+#bg {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: .1s;
+  background: #000;
+}
+#nav-container:focus-within .bg {
+  visibility: visible;
+  opacity: .6;
+}
+#nav-container * {
+  visibility: visible;
+}
+.exitButton{
+  color: #673ab7;
+  height: 2em;
+  width: 2em;
+}
+.button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  /* -webkit-appearance: none; */
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  height: 70px;
+  width: 30px;
+  cursor: pointer;
+  pointer-events: auto;
+  margin-left: 25px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.icon-bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  /* background: #aaa; */
+  background: white;
+  transition: .3s;
+}
+.icon-bar + .icon-bar {
+  margin-top: 5px;
+}
+
+
+
+#nav-content {
+  padding: 20px;
+  width: 90%;
+  max-width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height:100%;
+  background: white;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  transform: translateX(-100%);
+  transition: transform .3s;
+  will-change: transform;
+  contain: paint;
+  z-index:1;
+    color: #673ab7;
+    box-sizing: border-box;
+}
+
+#nav-content ul {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.passerr{
+  width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#nav-content li a {
+  padding: 20px;
+  display: block;
+  text-transform: uppercase;
+  transition: color .1s;
+  touch-action: manipulation;
+}
+
+#nav-content li a:hover {
+  color: purple;
+}
+
+#nav-content  a:hover {
+    background-color: rgb(214, 205, 233);
+    color: purple;
+}
+
+#nav-content li:not(.small) + .small {
+  margin-top: auto;
+  border-top: 1px purple;
+}
+#nav-content li:focus  {
+    background: red;
+    outline: 0;
+  }
+
+.small {
+  display: flex;
+  align-self: center;
+}
+
+.small a {
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+}
+.small a + a {
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+#nav-container:focus-within #nav-content {
+  transform: none;
+}
+
+#nav-content:focus-within{
+    transform: translateX(-100%);
+  }
+* {
+  /* box-sizing: border-box; */
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+a,
+a:visited,
+a:focus,
+a:active,
+a:link {
+  text-decoration: none;
+  outline: 0;
+  display: flex;
+}
+
+a {
+  display: flex;
+  color: currentColor;
+  transition: .2s ease-in-out;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+  height: auto;
+  width: 100%;
+}
+.bi_bi-house, .bibi-person_test1, .bibi-receipt_test1, .bibi-credit-card_test1{
+  width: 40px;
+  height: 35px;
+  margin-right: 1em;
+}
+
+.myaccount_test1{
+  width: 80%;
+  line-height: 32px;
+}
+
+.textfortest1{
+  text-align: center;
+  padding-top: 8em;
+}
+.mapLinkTest1{
+  width: 100%;
+  padding: 7em;
+  text-align: center;
+  display: center;
+  justify-content: center;
+  align-items: center; 
+}
+.home_test1, .receipthistory_test1, .cardshistory_test1, .myaccount_test1{
+  width: 70%;
+  float :right;
+  line-height: 33px;
+}
+.accountMenu{
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.exitButtonAccount{
+    width: 2em;
+    height: 2em;
+    margin: 1.5em;
+}
+.details, .details2, .details3{
+    text-align: center;
+
+  border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+.textaccount{
+    height: 40px;
+    text-align: center;
+    color: rgb(20, 134, 168);
+    font-size: 30px;
+    margin-top: 20%;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-family: 'Cormorant SC'!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    background-color: rgb(181, 136, 224);  
+}
+.buttonact{
+    height: 140px;
+    position: relative;
+    border: 3px solid green;
+    width: 10em;
+    font-size: large;
+    border: 0;
+    outline: 0;
+    color: rgb(9, 74, 94);
+    transition: 0.5s ease-in;
+    text-align: center;
+    padding-left: 5.4em;
+}
+.buttonaccount1{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 38px;
+    text-align: center;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+}
+.buttonaccount2{
+    border: none;
+    border-radius: 8px;
+    padding: 15px 38px;
+    text-align: center;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+}
+.bibibi-person, .bibienvelope, .bibi-key{
+  padding-left: 40px;
+}
+.usericon, .emailicon, .passwordicon{
+  margin-right: 20px;
+  position: absolute;
+}
+.firstnamee, .lastnamee, .eemail, .details3, .password{
+  display: flex;
+  align-items: center;
+}

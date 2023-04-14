@@ -1,24 +1,52 @@
-<section class="form-cover">
-    <div class="form-div">
-    <form (ngSubmit)="onSubmit()">
-        <div class="form-control">
-            <input type="email" placeholder="Enter your email" [(ngModel)]="user.email" name="email">
-            <i class="fa fa-envelope"></i>
-        </div>
-        <div class="form-control">
-            <input type="password" placeholder="Enter your password" [(ngModel)]="user.password" name="password">
-            <i class="fa fa-eye"></i>
-        </div>
-        <div class="form-control">
-            <input type="checkbox" name="remember">
-            <label for="name">Remember me</label>
-        </div>
-        <div class="form-control">
-            <button type="submit">Login</button>
-        </div>
-        <div class="form-control button-control">
-            <a routerLink="/register">Don't have an account? Register here</a>
-        </div>
-</form>
-</div>
-</section>
+
+<app-success *ngIf="login" :url="/home"></app-success>
+
+<body class="bodyLogIn">
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+			<div class="signup">
+				<form #registerForm="ngForm" (ngSubmit)="onSubmitRegister()">
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="txt" required #fname="ngModel" placeholder="First name" [(ngModel)]="user.firstname" name="firstname">
+                    <input type="text" name="txt" required #lname="ngModel" placeholder="Last name" [(ngModel)]="user.lastname" name="lastname">
+                    <input type="email" name="email" required #email="ngModel" placeholder="Enter your email" [(ngModel)]="user.email" name="email">
+					<input type="password" name="pswd"  required #password="ngModel" type="password" 
+                    placeholder="Enter your password" [(ngModel)]="user.password" name="password">
+					<input type="password" name="pswd" #Cpassword="ngModel" type="password" placeholder="Confirm your password" [(ngModel)]="user.checkPassword" name="Cpassword">
+					<button type="submit" class="loginButton">Sign up</button>
+                    <div class="alert" *ngIf="fname.touched && fname.errors?.['required']">
+                        This field can not be empty
+                    </div>
+                    <div class="alert" *ngIf="lname.touched && lname.errors?.['required']">
+                        This field can not be empty
+                    </div>
+                    <div class="alert" *ngIf="email.touched && email.errors?.['required']">
+                        This field can not be empty
+                    </div>
+                    <div class="alert" *ngIf="email.touched && !email.errors?.['required'] && invalidEmail()" >
+                        Invalid email format
+                    </div>
+                    <div class="alert" *ngIf="password.touched && password.errors?.['required']">
+                        This field can not be empty
+                    </div>
+                    <div class="alert" *ngIf="password.touched && passwordhasError()">
+                        <p>Your password must have min 8 characters</p>
+                        <p>One lower case, upper case and numeric chars.</p>
+                    </div>
+                    <div class="alert" *ngIf= ></div>
+				</form>
+			</div>
+           
+			<div class="login">
+				<form  #registerForm="ngForm" (ngSubmit)="onSubmit()">
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" required #email="ngModel" placeholder="Enter your email" [(ngModel)]="user.email" name="email">
+					<input type="password" required #password="ngModel"  placeholder="Enter your password" [(ngModel)]="user.password" name="password">
+					
+                <div class="alert" text-align="center" *ngIf='error_message!=""'>
+                    {{error_message}}
+                </div>
+                <button type="submit" class="loginButton">Sign in</button>
+				</form>
+			</div>
+	</div>
